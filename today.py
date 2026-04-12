@@ -210,7 +210,7 @@ def recursive_loc(owner: str, repo_name: str, data: List[str], cache_comment: Li
     raise Exception("recursive_loc() has failed with a", request.status_code, request.text, QUERY_COUNT)
 
 
-def loc_counter_one_repo(owner: str, repo_name: str, data: list[str], cache_comment: list[str], history: dict, addition_total: int, deletion_total: int, my_commits: int):
+def loc_counter_one_repo(owner: str, repo_name: str, data: List[str], cache_comment: List[str], history: Dict, addition_total: int, deletion_total: int, my_commits: int):
     """
     Recursively call recursive_loc() only adding LOC value of commits authored by the current user.
     """
