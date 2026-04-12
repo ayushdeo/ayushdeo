@@ -3,6 +3,7 @@ import hashlib
 import os
 import time
 from pathlib import Path
+from typing import Dict, List, Optional
 
 import requests
 from dateutil import relativedelta
@@ -57,7 +58,7 @@ def format_plural(unit: int) -> str:
     return "s" if unit != 1 else ""
 
 
-def simple_request(func_name: str, query: str, variables: dict) -> requests.Response:
+def simple_request(func_name: str, query: str, variables: Dict) -> requests.Response:
     """
     Returns a request, or raises an Exception if the response does not succeed.
     """
@@ -100,7 +101,7 @@ def graph_commits(start_date: str, end_date: str) -> int:
     )
 
 
-def stars_counter(data: list[dict]) -> int:
+def stars_counter(data: List[Dict]) -> int:
     """Count total stars in repositories owned by me."""
     total_stars = 0
     for node in data:
@@ -108,7 +109,7 @@ def stars_counter(data: list[dict]) -> int:
     return total_stars
 
 
-def graph_repos_stars(count_type: str, owner_affiliation: list[str], cursor: str | None = None):
+def graph_repos_stars(count_type: str, owner_affiliation: List[str], cursor: Optional[str] = None):
     """
     Uses GitHub's GraphQL v4 API to return total repository or star count.
     """
@@ -144,7 +145,7 @@ def graph_repos_stars(count_type: str, owner_affiliation: list[str], cursor: str
     raise ValueError(f"Unknown count_type: {count_type}")
 
 
-def recursive_loc(owner: str, repo_name: str, data: list[str], cache_comment: list[str], addition_total=0, deletion_total=0, my_commits=0, cursor: str | None = None):
+def recursive_loc(owner: str, repo_name: str, data: List[str], cache_comment: List[str], addition_total=0, deletion_total=0, my_commits=0, cursor: Optional[str] = None):
     """
     Uses GitHub's GraphQL v4 API and cursor pagination to fetch commits from a repository.
     """
@@ -234,7 +235,7 @@ def loc_counter_one_repo(owner: str, repo_name: str, data: list[str], cache_comm
     )
 
 
-def loc_query(owner_affiliation: list[str], comment_size: int = 0, force_cache: bool = False, cursor: str | None = None, edges: list | None = None):
+def loc_query(owner_affiliation: List[str], comment_size: int = 0, force_cache: bool = False, cursor: Optional[str] = None, edges: Optional[List] = None):
     """
     Query all repositories I have access to and return the total LOC tuple.
     Returns [added_loc, deleted_loc, total_loc, cached]
@@ -279,7 +280,7 @@ def loc_query(owner_affiliation: list[str], comment_size: int = 0, force_cache: 
     return cache_builder(edges + repos["edges"], comment_size, force_cache)
 
 
-def cache_builder(edges: list, comment_size: int, force_cache: bool, loc_add=0, loc_del=0):
+def cache_builder(edges: List, comment_size: int, force_cache: bool, loc_add=0, loc_del=0):
     """
     Checks each repository in edges to see if it has been updated since last cache.
     If it has, run recursive_loc on that repository to update LOC counts.
@@ -340,7 +341,7 @@ def cache_builder(edges: list, comment_size: int, force_cache: bool, loc_add=0, 
     return [loc_add, loc_del, loc_add - loc_del, cached]
 
 
-def flush_cache(edges: list, filename: Path, comment_size: int) -> None:
+def flush_cache(edges: List, filename: Path, comment_size: int) -> None:
     """Wipes the cache file."""
     with open(filename, "r", encoding="utf-8") as f:
         data = []
@@ -352,7 +353,7 @@ def flush_cache(edges: list, filename: Path, comment_size: int) -> None:
             f.write(hashlib.sha256(node["node"]["nameWithOwner"].encode("utf-8")).hexdigest() + " 0 0 0 0\n")
 
 
-def force_close_file(data: list[str], cache_comment: list[str]) -> None:
+def force_close_file(data: List[str], cache_comment: List[str]) -> None:
     """
     Forces the file to close, preserving whatever data was written to it.
     """
@@ -410,7 +411,7 @@ def follower_getter(username: str) -> int:
     return int(request.json()["data"]["user"]["followers"]["totalCount"])
 
 
-def svg_overwrite(filename: str, age_data: str, commit_data: int, star_data: int, repo_data: int, contrib_data: int, follower_data: int, loc_data: list[str]):
+def svg_overwrite(filename: str, age_data: str, commit_data: int, star_data: int, repo_data: int, contrib_data: int, follower_data: int, loc_data: List[str]):
     """
     Parse SVG files and update elements with age, commits, stars, repositories, followers, and LOC.
     """
