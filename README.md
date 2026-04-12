@@ -1,3 +1,3 @@
 <p align="center">
-  <img src="./profile.svg" alt="Ayush Deo profile" />
+  <img src="https://raw.githubusercontent.com/ayushdeo/ayushdeo/main/profile.svg" />
 </p>
