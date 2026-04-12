@@ -17,7 +17,7 @@ USER_NAME = os.environ["USER_NAME"]
 # Optional: set your birthday here for the age counter.
 # If you do not want an age counter, you can remove daily_readme() usage below
 # and the matching SVG fields.
-BIRTHDAY = datetime.datetime(2003, 08, 04)
+BIRTHDAY = datetime.datetime(2003, 8, 4)
 
 QUERY_COUNT = {
     "user_getter": 0,
