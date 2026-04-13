@@ -1,130 +1,172 @@
 <svg width="1200" height="720" viewBox="0 0 1200 720" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <linearGradient id="bgGrad" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#0b1020"/>
-      <stop offset="55%" stop-color="#0d1117"/>
-      <stop offset="100%" stop-color="#090d14"/>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#05080f"/>
+      <stop offset="100%" stop-color="#0d1117"/>
     </linearGradient>
-
-    <linearGradient id="accentGrad" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0%" stop-color="#58a6ff"/>
-      <stop offset="100%" stop-color="#9b5cff"/>
-    </linearGradient>
-
-    <filter id="glow" x="-30%" y="-30%" width="160%" height="160%">
-      <feGaussianBlur stdDeviation="16" result="blur"/>
-      <feColorMatrix in="blur" type="matrix"
-        values="1 0 0 0 0.35
-                0 1 0 0 0.40
-                0 0 1 0 0.95
-                0 0 0 0.8 0" />
-    </filter>
-
     <style>
-      .mono { font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace; }
-      .title { font-size: 34px; font-weight: 700; fill: #e6edf3; }
-      .subtitle { font-size: 16px; fill: #9fb0c3; }
-      .label { font-size: 13px; fill: #8b949e; letter-spacing: 0.12em; }
-      .body { font-size: 15px; fill: #c9d1d9; }
-      .small { font-size: 13px; fill: #c9d1d9; }
+      .mono { font-family: Consolas, Menlo, Monaco, "SFMono-Regular", monospace; }
+      .title { font-size: 30px; font-weight: 700; fill: #d7e2ee; }
+      .sub { font-size: 14px; fill: #9fb0c3; }
+      .txt { font-size: 13px; fill: #c9d1d9; }
+      .small { font-size: 12px; fill: #c9d1d9; }
+      .dim { fill: #7d8590; }
       .accent { fill: #58a6ff; }
       .accent2 { fill: #ffa657; }
-      .panel { fill: rgba(255,255,255,0.03); stroke: rgba(255,255,255,0.08); stroke-width: 1; }
-      .chip { fill: rgba(88,166,255,0.10); stroke: rgba(88,166,255,0.25); stroke-width: 1; }
-      .chip2 { fill: rgba(155,92,255,0.10); stroke: rgba(155,92,255,0.25); stroke-width: 1; }
-      .grid { stroke: rgba(255,255,255,0.04); stroke-width: 1; }
+      .terminal { fill: rgba(255,255,255,0.03); stroke: rgba(255,255,255,0.08); stroke-width: 1; }
+      .chip { fill: rgba(88,166,255,0.08); stroke: rgba(88,166,255,0.22); stroke-width: 1; }
+      .line { stroke: rgba(255,255,255,0.05); stroke-width: 1; }
     </style>
   </defs>
 
-  <rect width="1200" height="720" rx="28" fill="url(#bgGrad)"/>
+  <rect width="1200" height="720" rx="24" fill="url(#bg)"/>
+  <rect x="24" y="24" width="1152" height="672" rx="20" class="terminal"/>
 
-  <g opacity="0.9">
-    <circle cx="1030" cy="110" r="120" fill="#58a6ff" opacity="0.08" filter="url(#glow)"/>
-    <circle cx="1090" cy="570" r="160" fill="#9b5cff" opacity="0.08" filter="url(#glow)"/>
-    <circle cx="160" cy="620" r="120" fill="#ffa657" opacity="0.06" filter="url(#glow)"/>
+  <!-- terminal bar -->
+  <rect x="24" y="24" width="1152" height="44" rx="20" fill="rgba(255,255,255,0.02)"/>
+  <circle cx="52" cy="46" r="6" fill="#ff5f56"/>
+  <circle cx="74" cy="46" r="6" fill="#ffbd2e"/>
+  <circle cx="96" cy="46" r="6" fill="#27c93f"/>
+  <text x="132" y="50" class="mono small dim">ayush@deo:~/profile$</text>
+
+  <text x="54" y="102" class="mono title">Ayush Deo</text>
+  <text x="54" y="126" class="mono sub">AI Researcher | Agentic Systems | LLMs | Gene Sequencing AI | Graphic Design</text>
+  <line x1="54" y1="146" x2="1148" y2="146" class="line"/>
+
+  <!-- left neofetch-style panel -->
+  <g transform="translate(54,170)">
+    <rect x="0" y="0" width="330" height="470" rx="16" class="chip"/>
+    <text x="18" y="28" class="mono txt dim">┌──────────────────────────────┐</text>
+    <text x="18" y="48" class="mono txt dim">│  [ascii] profile output       │</text>
+    <text x="18" y="68" class="mono txt dim">└──────────────────────────────┘</text>
+
+<g id="ascii_art">
+  <text x="50" y="80" font-family="monospace" font-size="12" fill="#ffffff" xml:space="preserve">
+    <tspan x="50" dy="0">                                                                                                    </tspan>
+    <tspan x="50" dy="14">                                                                                                    </tspan>
+    <tspan x="50" dy="14">                                                                                                    </tspan>
+    <tspan x="50" dy="14">                                                                                                    </tspan>
+    <tspan x="50" dy="14">                                                                                                    </tspan>
+    <tspan x="50" dy="14">                                                                                                    </tspan>
+    <tspan x="50" dy="14">                                                                                                    </tspan>
+    <tspan x="50" dy="14">                                                                                                    </tspan>
+    <tspan x="50" dy="14">:               :                                                                                   </tspan>
+    <tspan x="50" dy="14">:               :                                                                                   </tspan>
+    <tspan x="50" dy="14">-:                                                                                                 :</tspan>
+    <tspan x="50" dy="14">-:                                                                    ::                           :</tspan>
+    <tspan x="50" dy="14">-::                                                                                                :</tspan>
+    <tspan x="50" dy="14">=-::                                                                                               :</tspan>
+    <tspan x="50" dy="14">==-:                                                                                              ::</tspan>
+    <tspan x="50" dy="14">-=- :                                                                                            :::</tspan>
+    <tspan x="50" dy="14">-=*-                                                                                                </tspan>
+    <tspan x="50" dy="14">--=*:                                                                                               </tspan>
+    <tspan x="50" dy="14">-===:                                                                                               </tspan>
+    <tspan x="50" dy="14">---==:                                                                                              </tspan>
+    <tspan x="50" dy="14">===*---:                                                                                            </tspan>
+    <tspan x="50" dy="14">                                       =:-*%%%*-:                                                   </tspan>
+    <tspan x="50" dy="14">                                    :*@%*--: : ::::::                                               </tspan>
+    <tspan x="50" dy="14">                                  =@@*:              :                     :                        </tspan>
+    <tspan x="50" dy="14">                                 **=:                                                               </tspan>
+    <tspan x="50" dy="14">                                **:          :                                                      </tspan>
+    <tspan x="50" dy="14">                               :%:        -===-:                                                    </tspan>
+    <tspan x="50" dy="14">                               =*:    :---==-   :                                                   </tspan>
+    <tspan x="50" dy="14">                               *:      :  :=:      :                                                </tspan>
+    <tspan x="50" dy="14">                               --    ::   :*=:-::-=-::  :                                           </tspan>
+    <tspan x="50" dy="14">                                -:  :----==*=--====-:: ::                                           </tspan>
+    <tspan x="50" dy="14">                                  : -=**==::::::--:::::::                                           </tspan>
+    <tspan x="50" dy="14">::::::                            :- ==------::: :-:::                                              </tspan>
+    <tspan x="50" dy="14">         :::::::::: :  :::         --==--::----:--::::                                              </tspan>
+    <tspan x="50" dy="14">        ::: :::::   ::: ::  :  ::::::-=---=====--:::    ::::                                        </tspan>
+    <tspan x="50" dy="14">                               ::::: ::------::::     :::    :    :    :        : :                 </tspan>
+    <tspan x="50" dy="14">                                         ::::::     ::::::: -:        :: ::                :   :    </tspan>
+    <tspan x="50" dy="14">        :               :                 :::::   ::::::::   :=:--  -:                              </tspan>
+    <tspan x="50" dy="14">=-  ::      :=-:   : :-:                   ---::::::::--:      : : *****-              :            </tspan>
+    <tspan x="50" dy="14">*****@@*==*=--=%****@***==-::          :   -=:::::----:         ****=-*=   :                        </tspan>
+    <tspan x="50" dy="14">-===**::-::::::::=:-:::-*-===--::::     :** *=:::---:              :::       :          :           </tspan>
+    <tspan x="50" dy="14">*==**********=**=-:::    ::         :**%-:= *=:::                   :           :                   </tspan>
+    <tspan x="50" dy="14">     ::: ::-====********=-=-::::  :* -=  ==-:-                                                      </tspan>
+    <tspan x="50" dy="14">               :::::--:::::::: :*-: : -  - : :-                                                     </tspan>
+    <tspan x="50" dy="14">                              :=-:       : :                                                        </tspan>
+    <tspan x="50" dy="14">                             :-=      :: :  :  :                                                    </tspan>
+    <tspan x="50" dy="14">                            -*:         :                                                           </tspan>
+    <tspan x="50" dy="14">                            =:                                                                      </tspan>
+    <tspan x="50" dy="14">                           *:                                                                       </tspan>
+    <tspan x="50" dy="14">                          =-                                                                        </tspan>
+    <tspan x="50" dy="14">                         :-:                                                                        </tspan>
+    <tspan x="50" dy="14">                         =:                                                         ::              </tspan>
+    <tspan x="50" dy="14">                       :*=:                                                    -=***=--:            </tspan>
+    <tspan x="50" dy="14">    :   :::: :::  ::::-@@%****=:                                           :********==-::           </tspan>
+    <tspan x="50" dy="14"> ::::::::::::::::::::=@@@*****==-:  :                                      :=*******==--:           </tspan>
+    <tspan x="50" dy="14">::::::::::::::::::::-@@@%****==-: ::::                                      -=*****===--::          </tspan>
+    <tspan x="50" dy="14">:::::::=***=--------@@@****===-:::::::::                                     -========--::::     ::-</tspan>
+    <tspan x="50" dy="14">::--=*@@@%**%%%%**%@@@****===-: =*%@%**-=:                                    :---===---::::--------</tspan>
+    <tspan x="50" dy="14">**%@@@@@@@@@%%%%%%@@%**====-:::=****=**==-           :==**%%*%%*:              ::::-----:::::-------</tspan>
+    <tspan x="50" dy="14">@@@@@@@@@@@%%%**%@@@*--==--:::=***-=****=-        *@@%=::::---*@@@*            *::------:::::-=====-</tspan>
+    <tspan x="50" dy="14">@@@@@@@@@@@%%***@@@%*=::--:::***=*********:     -@@%*          -%%%@-          -===----::::::-******</tspan>
+    <tspan x="50" dy="14">@@@@@@@@@@@@@@@@@@@%**=-:::=%*****%*****==:    -@%%*====:       %*%%%*      :-====---:::::::::******</tspan>
+    <tspan x="50" dy="14">@@@@@@@@%@@@@@%@@@@**=--::*@@@@@@@@%%%***=:    *%%%*==-*        %**%%%*  :-====----::::::::: :=*****</tspan>
+    <tspan x="50" dy="14">@@@@@%%@@@@@@@%@@@%**--::=@@@@@@@@@@@@@%%*-   -*-:-****        :***: :***=-=----:::::::::   :-==-===</tspan>
+    <tspan x="50" dy="14">@@@@@@@@@@@@@%*%@%%*=-:::-********==-::::-  ::*%%%@@%@@@@%=:::-=--     :-----::::::::    :::::::::--</tspan>
+    <tspan x="50" dy="14">@@@@@@**=-::::*%@@%*-::                ::::--%%%***@@**=*****====-:     :::::::::::  ::---:-::::::::</tspan>
+    <tspan x="50" dy="14">%@=           *@@%%*:                        *%@%**=====--==---===--    :::      :-=**===---::::::::</tspan>
+    <tspan x="50" dy="14">*:           :%@%%**-                        =**==-=**====-======-::             :**=**=====----::::</tspan>
+    <tspan x="50" dy="14">:            :****==-                   :      :**==-:-===------:                 -=====*======-----</tspan>
+    <tspan x="50" dy="14">             :****==-:                   :       :  =*==-::::                      -=-=========-----</tspan>
+    <tspan x="50" dy="14">             *****===-:               -=           :--:                            -----------------</tspan>
+    <tspan x="50" dy="14">             *****===-:              -==                                          :--------------:-:</tspan>
+    <tspan x="50" dy="14">            :*==**===-::            :--==-                                        :::::-:--:::-:::::</tspan>
+    <tspan x="50" dy="14">            =*======--::           :-----::                                       ::::::::::::-:-:::</tspan>
+    <tspan x="50" dy="14">            :--------: ::            ::--:                                        -::::::::::::::::-</tspan>
+    <tspan x="50" dy="14">            :-----::-: ::           ::-:                                         -====--:::::::::---</tspan>
+    <tspan x="50" dy="14">             ------:=- ::           -:                                          *********==----=====</tspan>
+    <tspan x="50" dy="14">               :---:-:  :           :                                          ******************=*=</tspan>
+    <tspan x="50" dy="14">                  :                                                           ******%%%%%%%%%%******</tspan>
+    <tspan x="50" dy="14">                                                                                 :**%*%%%%%%%%%%%%%*</tspan>
+    <tspan x="50" dy="14">               :::  :                                                               :=*%%%%%%%%%%@%%</tspan>
+    <tspan x="50" dy="14">           :::::::: :                                                             ::::::-**%%%%%%%%%</tspan>
+  </text>
+</g>
+
+    <text x="18" y="342" class="mono small dim">┌──────────────────────────────┐</text>
+    <text x="18" y="362" class="mono small">│  style: terminal / text-first │</text>
+    <text x="18" y="382" class="mono small">│  vibe: research + design      │</text>
+    <text x="18" y="402" class="mono small">│  mode: dark only              │</text>
+    <text x="18" y="422" class="mono small dim">└──────────────────────────────┘</text>
   </g>
 
-  <g opacity="0.35">
-    <line x1="60" y1="96" x2="1140" y2="96" class="grid"/>
-    <line x1="60" y1="610" x2="1140" y2="610" class="grid"/>
-    <line x1="390" y1="130" x2="390" y2="570" class="grid"/>
-    <line x1="790" y1="130" x2="790" y2="570" class="grid"/>
+  <!-- right terminal content -->
+  <g transform="translate(410,170)">
+    <text x="0" y="0" class="mono txt dim">$ whoami</text>
+    <text x="0" y="22" class="mono txt">Ayush Deo — USC M.S. CS</text>
+    <text x="0" y="44" class="mono txt">Researcher focused on LLMs, evaluation, and agentic workflows.</text>
+    <text x="0" y="66" class="mono txt">I also build systems for gene sequencing AI and visual design.</text>
+
+    <line x1="0" y1="88" x2="670" y2="88" class="line"/>
+
+    <text x="0" y="118" class="mono txt dim">$ cat education.txt</text>
+    <text x="0" y="140" class="mono txt">University of Southern California</text>
+    <text x="0" y="160" class="mono small">M.S. Computer Science · 2025–2027</text>
+    <text x="0" y="182" class="mono txt">NMIMS Mukesh Patel School of Technology</text>
+    <text x="0" y="202" class="mono small">B.Tech. Information Technology · CGPA 3.62/4.0</text>
+
+    <text x="0" y="240" class="mono txt dim">$ cat research.txt</text>
+    <text x="0" y="262" class="mono txt">6 published papers</text>
+    <text x="0" y="282" class="mono small">Vision-language captioning · GPT-4o-mini bias analysis</text>
+    <text x="0" y="304" class="mono small">LLM evaluation · multimodal systems · bioinformatics AI</text>
+
+    <text x="0" y="342" class="mono txt dim">$ cat experience.txt</text>
+    <text x="0" y="364" class="mono txt">TCS · AI/ML Intern, Cloud.AI Division</text>
+    <text x="0" y="384" class="mono small">Built 7-agent automation, hybrid reasoning, and RAG pipelines.</text>
+    <text x="0" y="406" class="mono txt">Bellevidco · Co-Founder</text>
+    <text x="0" y="426" class="mono small">Scaled a data-driven consultancy with analytics systems.</text>
+
+    <text x="0" y="464" class="mono txt dim">$ cat stack.txt</text>
+    <text x="0" y="486" class="mono txt">Python | SQL | TypeScript | C++ | PyTorch | Hugging Face</text>
+    <text x="0" y="508" class="mono txt">Azure AI | AutoGen | Docker | React | NLP | RAG</text>
+
+    <text x="0" y="546" class="mono txt dim">$ cat contact.txt</text>
+    <text x="0" y="568" class="mono txt">theayushdeo@gmail.com</text>
+    <text x="230" y="568" class="mono txt">linkedin.com/in/ayushdeo</text>
+    <text x="470" y="568" class="mono txt">github.com/ayushdeo</text>
   </g>
-
-  <rect x="40" y="40" width="1120" height="640" rx="22" class="panel"/>
-
-  <text x="70" y="96" class="mono title">Ayush Deo</text>
-  <text x="70" y="124" class="mono subtitle">AI Researcher  |  Agentic Systems  |  LLMs  |  Gene Sequencing AI  |  Visual Design</text>
-
-  <g transform="translate(70,160)">
-    <rect x="0" y="0" width="300" height="82" rx="16" class="chip"/>
-    <text x="18" y="28" class="mono label">CURRENT FOCUS</text>
-    <text x="18" y="54" class="mono body">Researching LLMs, agentic pipelines,</text>
-    <text x="18" y="74" class="mono body">and biomedical sequence intelligence.</text>
-  </g>
-
-  <g transform="translate(70,268)">
-    <rect x="0" y="0" width="300" height="142" rx="16" class="chip2"/>
-    <text x="18" y="28" class="mono label">CONTACT</text>
-    <text x="18" y="58" class="mono body">Email: theayushdeo@gmail.com</text>
-    <text x="18" y="82" class="mono body">LinkedIn: linkedin.com/in/ayushdeo</text>
-    <text x="18" y="106" class="mono body">GitHub: github.com/ayushdeo</text>
-    <text x="18" y="130" class="mono body">Location: Los Angeles, USA</text>
-  </g>
-
-  <g transform="translate(70,436)">
-    <rect x="0" y="0" width="300" height="148" rx="16" class="chip"/>
-    <text x="18" y="28" class="mono label">SKILLS</text>
-    <text x="18" y="58" class="mono body">Python  |  SQL  |  TypeScript  |  C++</text>
-    <text x="18" y="82" class="mono body">PyTorch  |  Hugging Face  |  Azure AI</text>
-    <text x="18" y="106" class="mono body">AutoGen  |  Docker  |  React  |  GitHub Actions</text>
-    <text x="18" y="130" class="mono body">NLP  |  Computer Vision  |  RAG  |  Graph Reasoning</text>
-  </g>
-
-  <g transform="translate(430,160)">
-    <text x="0" y="0" class="mono label">EDUCATION</text>
-    <text x="0" y="30" class="mono body">University of Southern California</text>
-    <text x="0" y="52" class="mono small">M.S. Computer Science, 2025 - 2027</text>
-    <text x="0" y="84" class="mono body">NMIMS Mukesh Patel School of Technology</text>
-    <text x="0" y="106" class="mono small">B.Tech. Information Technology, CGPA 3.62/4.0</text>
-
-    <text x="0" y="154" class="mono label">RESEARCH</text>
-    <text x="0" y="184" class="mono body">6 papers published, including vision-language</text>
-    <text x="0" y="206" class="mono body">caption generation and GPT-4o-mini bias analysis.</text>
-    <text x="0" y="238" class="mono body">Interested in LLM evaluation, agentic workflows,</text>
-    <text x="0" y="260" class="mono body">and sequence-aware AI for bioinformatics.</text>
-
-    <text x="0" y="308" class="mono label">EXPERIENCE</text>
-    <text x="0" y="338" class="mono body">TCS  |  AI/ML Intern, Cloud.AI Division</text>
-    <text x="0" y="360" class="mono small">Built 7-agent automation, hybrid LLM reasoning, and RAG pipelines.</text>
-    <text x="0" y="392" class="mono body">Bellevidco  |  Co-Founder</text>
-    <text x="0" y="414" class="mono small">Scaled a data-driven consultancy with analytics and reporting systems.</text>
-  </g>
-
-  <g transform="translate(830,160)">
-    <rect x="0" y="0" width="300" height="118" rx="16" class="chip"/>
-    <text x="18" y="28" class="mono label">FOCUS AREAS</text>
-    <text x="18" y="58" class="mono body">Agentic AI systems</text>
-    <text x="18" y="80" class="mono body">LLM evaluation and reasoning</text>
-    <text x="18" y="102" class="mono body">Gene sequencing AI</text>
-  </g>
-
-  <g transform="translate(830,302)">
-    <rect x="0" y="0" width="300" height="162" rx="16" class="chip2"/>
-    <text x="18" y="28" class="mono label">HIGHLIGHTS</text>
-    <text x="18" y="58" class="mono body">- USC MS CS student</text>
-    <text x="18" y="80" class="mono body">- 6 published research papers</text>
-    <text x="18" y="102" class="mono body">- Built multi-agent LLM workflows</text>
-    <text x="18" y="124" class="mono body">- Strong interest in biotech AI</text>
-    <text x="18" y="146" class="mono body">- Design-minded technical storyteller</text>
-  </g>
-
-  <g transform="translate(830,490)">
-    <rect x="0" y="0" width="300" height="94" rx="16" class="chip"/>
-    <text x="18" y="28" class="mono label">PERSONAL</text>
-    <text x="18" y="58" class="mono body">I like building things that are useful,</text>
-    <text x="18" y="78" class="mono body">visually clean, and research driven.</text>
-  </g>
-
-  <text x="70" y="658" class="mono small" fill="#7d8590">profile.svg • update the text blocks, keep the structure, and GitHub will render it cleanly</text>
 </svg>
