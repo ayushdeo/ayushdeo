@@ -39,12 +39,6 @@
   </clipPath>
 </defs>
 
-<g transform="translate(54,170)">
-  <rect x="0" y="0" width="330" height="470" rx="16" class="chip"/>
-  <text x="18" y="28" class="mono txt dim">┌──────────────────────────────┐</text>
-  <text x="18" y="48" class="mono txt dim">│  [ascii] profile output       │</text>
-  <text x="18" y="68" class="mono txt dim">└──────────────────────────────┘</text>
-
   <g clip-path="url(#asciiClip)" transform="translate(18,92) scale(0.22)">
     <text x="0" y="0" class="mono txt" font-size="10" xml:space="preserve">
                 ******=----=-----------=--::::------------------:----:::::-----------::-:::--:::::::::::-:--:--:-=-:::::-:--:::::-------          
