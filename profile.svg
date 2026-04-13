@@ -95,8 +95,5 @@
     <text x="388" y="380" class="mono body">PyTorch | Hugging Face | Azure AI</text>
     <text x="388" y="404" class="mono body">AutoGen | Docker | React | NLP | RAG</text>
 
-    <rect x="0" y="450" width="720" height="72" rx="18" class="chip"/>
-    <text x="18" y="480" class="mono label">FOCUS</text>
-    <text x="18" y="508" class="mono body">Agentic AI systems · LLM reasoning · gene sequencing AI · clean visual identity</text>
   </g>
 </svg>
