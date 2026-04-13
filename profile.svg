@@ -1,5 +1,4 @@
-<?xml version='1.0' encoding='UTF-8'?>
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720">
+<svg width="1200" height="720" viewBox="0 0 1200 720" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0%" stop-color="#05070d"/>
@@ -16,12 +15,13 @@
       .label { font-size: 11px; letter-spacing: 0.16em; fill: #8b949e; }
       .body { font-size: 13px; fill: #c9d1d9; }
       .small { font-size: 12px; fill: #c9d1d9; }
+      .panel { fill: rgba(255,255,255,0.03); stroke: rgba(255,255,255,0.08); stroke-width: 1; }
       .chip { fill: rgba(88,166,255,0.08); stroke: rgba(88,166,255,0.22); stroke-width: 1; }
       .chip2 { fill: rgba(155,92,255,0.10); stroke: rgba(155,92,255,0.22); stroke-width: 1; }
-      .panel { fill: rgba(255,255,255,0.03); stroke: rgba(255,255,255,0.08); stroke-width: 1; }
       .line { stroke: rgba(255,255,255,0.05); stroke-width: 1; }
-      .accentText { fill: #58a6ff; }
-      .accentText2 { fill: #ffa657; }
+      .key { fill: #ffa657; }
+      .value { fill: #e6edf3; }
+      .dots { fill: #7d8590; }
     </style>
   </defs>
 
@@ -38,30 +38,52 @@
   <text x="56" y="130" class="mono sub">AI Researcher | Agentic Systems | LLMs | Gene Sequencing AI | Graphic Design</text>
   <line x1="56" y1="150" x2="1144" y2="150" class="line"/>
 
+  <!-- LEFT COLUMN -->
   <g transform="translate(56,176)">
     <rect x="0" y="0" width="324" height="470" rx="18" class="chip"/>
+
     <text x="20" y="30" class="mono label">PROFILE</text>
-    <text x="20" y="62" class="mono body">Research-first builder focused on</text>
+    <text x="20" y="60" class="mono body">Research-first builder focused on</text>
     <text x="20" y="82" class="mono body">LLM evaluation, agentic workflows,</text>
-    <text x="20" y="102" class="mono body">and Spatial Transcriptomnics-oriented AI.</text>
+    <text x="20" y="104" class="mono body">and bioinformatics-oriented AI.</text>
 
-    <line x1="20" y1="130" x2="304" y2="130" class="line"/>
+    <line x1="20" y1="132" x2="304" y2="132" class="line"/>
 
-    <text x="20" y="164" class="mono label">HIGHLIGHTS</text>
-    <text x="20" y="194" class="mono body">• USC M.S. Computer Science</text>
-    <text x="20" y="218" class="mono body">• 6 published papers</text>
-    <text x="20" y="242" class="mono body">• TCS AI/ML intern</text>
-    <text x="20" y="266" class="mono body">• BelleVidCo co-founder</text>
-    <text x="20" y="290" class="mono body">• Strong design eye</text>
+    <text x="20" y="166" class="mono label">LIVE STATS</text>
 
-    <line x1="20" y1="322" x2="304" y2="322" class="line"/>
+    <text x="20" y="196" class="mono body">
+      <tspan class="key">Age:</tspan> <tspan id="age_data" class="value">0</tspan>
+      <tspan>   </tspan>
+      <tspan class="key">Repos:</tspan> <tspan id="repo_data" class="value">0</tspan>
+      <tspan>   </tspan>
+      <tspan class="key">Stars:</tspan> <tspan id="star_data" class="value">0</tspan>
+    </text>
 
-    <text x="20" y="356" class="mono label">CONTACT</text>
-    <text x="20" y="386" class="mono body">theayushdeo@gmail.com</text>
-    <text x="20" y="410" class="mono body">linkedin.com/in/ayushdeo</text>
-    <text x="20" y="434" class="mono body">github.com/ayushdeo</text>
+    <text x="20" y="222" class="mono body">
+      <tspan class="key">Commits:</tspan> <tspan id="commit_data" class="value">0</tspan>
+      <tspan>   </tspan>
+      <tspan class="key">Followers:</tspan> <tspan id="follower_data" class="value">0</tspan>
+    </text>
+
+    <text x="20" y="248" class="mono body">
+      <tspan class="key">Contrib:</tspan> <tspan id="contrib_data" class="value">0</tspan>
+    </text>
+
+    <text x="20" y="274" class="mono body">
+      <tspan class="key">LOC:</tspan> <tspan id="loc_data" class="value">0</tspan>
+      <tspan>  (+</tspan><tspan id="loc_add" class="value">0</tspan>
+      <tspan>, -</tspan><tspan id="loc_del" class="value">0</tspan><tspan>)</tspan>
+    </text>
+
+    <line x1="20" y1="302" x2="304" y2="302" class="line"/>
+
+    <text x="20" y="336" class="mono label">CONTACT</text>
+    <text x="20" y="366" class="mono body">theayushdeo@gmail.com</text>
+    <text x="20" y="390" class="mono body">linkedin.com/in/ayushdeo</text>
+    <text x="20" y="414" class="mono body">github.com/ayushdeo</text>
   </g>
 
+  <!-- RIGHT SIDE -->
   <g transform="translate(404,176)">
     <rect x="0" y="0" width="720" height="120" rx="18" class="chip2"/>
     <text x="18" y="30" class="mono label">SUMMARY</text>
