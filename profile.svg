@@ -80,12 +80,12 @@
       <tspan>, -</tspan><tspan id="loc_del" class="value">0</tspan><tspan>)</tspan>
     </text>
 
-    <line x1="20" y1="302" x2="304" y2="302" class="line"/>
-
-    <text x="20" y="336" class="mono label">CONTACT</text>
-    <text x="20" y="366" class="mono body">theayushdeo@gmail.com</text>
-    <text x="20" y="390" class="mono body">linkedin.com/in/ayushdeo</text>
-    <text x="20" y="414" class="mono body">github.com/ayushdeo</text>
+    <line x1="20" y1="334" x2="304" y2="334" class="line"/>
+    
+    <text x="20" y="368" class="mono label">CONTACT</text>
+    <text x="20" y="398" class="mono body">theayushdeo@gmail.com</text>
+    <text x="20" y="422" class="mono body">linkedin.com/in/ayushdeo</text>
+    <text x="20" y="446" class="mono body">github.com/ayushdeo</text>
   </g>
 
   <!-- RIGHT SIDE -->
