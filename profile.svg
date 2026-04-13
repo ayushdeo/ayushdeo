@@ -53,26 +53,30 @@
     <text x="20" y="166" class="mono label">LIVE STATS</text>
 
     <text x="20" y="196" class="mono body">
-      <tspan class="key">Age:</tspan> <tspan id="age_data" class="value">22 years, 8 months, 9 days</tspan>
-      <tspan>   </tspan>
-      <tspan class="key">Repos:</tspan> <tspan id="repo_data" class="value">28</tspan>
-      <tspan>   </tspan>
-      <tspan class="key">Stars:</tspan> <tspan id="star_data" class="value">3</tspan>
+      <tspan class="key">Age:</tspan> <tspan id="age_data" class="value">0</tspan>
     </text>
-
-    <text x="20" y="222" class="mono body">
-      <tspan class="key">Commits:</tspan> <tspan id="commit_data" class="value">0</tspan>
+    
+    <text x="20" y="218" class="mono body">
+      <tspan class="key">Repos:</tspan> <tspan id="repo_data" class="value">0</tspan>
       <tspan>   </tspan>
+      <tspan class="key">Stars:</tspan> <tspan id="star_data" class="value">0</tspan>
+    </text>
+    
+    <text x="20" y="240" class="mono body">
+      <tspan class="key">Commits:</tspan> <tspan id="commit_data" class="value">0</tspan>
+    </text>
+    
+    <text x="20" y="262" class="mono body">
       <tspan class="key">Followers:</tspan> <tspan id="follower_data" class="value">0</tspan>
     </text>
-
-    <text x="20" y="248" class="mono body">
-      <tspan class="key">Contrib:</tspan> <tspan id="contrib_data" class="value">47</tspan>
+    
+    <text x="20" y="284" class="mono body">
+      <tspan class="key">Contrib:</tspan> <tspan id="contrib_data" class="value">0</tspan>
     </text>
-
-    <text x="20" y="274" class="mono body">
+    
+    <text x="20" y="306" class="mono body">
       <tspan class="key">LOC:</tspan> <tspan id="loc_data" class="value">0</tspan>
-      <tspan>  (+</tspan><tspan id="loc_add" class="value">0</tspan>
+      <tspan> (+</tspan><tspan id="loc_add" class="value">0</tspan>
       <tspan>, -</tspan><tspan id="loc_del" class="value">0</tspan><tspan>)</tspan>
     </text>
 
