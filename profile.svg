@@ -42,7 +42,7 @@
     <text x="20" y="30" class="mono label">PROFILE</text>
     <text x="20" y="62" class="mono body">Research-first builder focused on</text>
     <text x="20" y="82" class="mono body">LLM evaluation, agentic workflows,</text>
-    <text x="20" y="102" class="mono body">and bioinformatics-oriented AI.</text>
+    <text x="20" y="102" class="mono body">and Spatial Transcriptomnics-oriented AI.</text>
 
     <line x1="20" y1="130" x2="304" y2="130" class="line"/>
 
@@ -50,7 +50,7 @@
     <text x="20" y="194" class="mono body">• USC M.S. Computer Science</text>
     <text x="20" y="218" class="mono body">• 6 published papers</text>
     <text x="20" y="242" class="mono body">• TCS AI/ML intern</text>
-    <text x="20" y="266" class="mono body">• Bellevidco co-founder</text>
+    <text x="20" y="266" class="mono body">• BelleVidCo co-founder</text>
     <text x="20" y="290" class="mono body">• Strong design eye</text>
 
     <line x1="20" y1="322" x2="304" y2="322" class="line"/>
