@@ -1,4 +1,5 @@
-<svg width="1200" height="720" viewBox="0 0 1200 720" xmlns="http://www.w3.org/2000/svg">
+<?xml version='1.0' encoding='UTF-8'?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720">
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0%" stop-color="#05070d"/>
@@ -52,11 +53,11 @@
     <text x="20" y="166" class="mono label">LIVE STATS</text>
 
     <text x="20" y="196" class="mono body">
-      <tspan class="key">Age:</tspan> <tspan id="age_data" class="value">0</tspan>
+      <tspan class="key">Age:</tspan> <tspan id="age_data" class="value">22 years, 8 months, 9 days</tspan>
       <tspan>   </tspan>
-      <tspan class="key">Repos:</tspan> <tspan id="repo_data" class="value">0</tspan>
+      <tspan class="key">Repos:</tspan> <tspan id="repo_data" class="value">28</tspan>
       <tspan>   </tspan>
-      <tspan class="key">Stars:</tspan> <tspan id="star_data" class="value">0</tspan>
+      <tspan class="key">Stars:</tspan> <tspan id="star_data" class="value">3</tspan>
     </text>
 
     <text x="20" y="222" class="mono body">
@@ -66,7 +67,7 @@
     </text>
 
     <text x="20" y="248" class="mono body">
-      <tspan class="key">Contrib:</tspan> <tspan id="contrib_data" class="value">0</tspan>
+      <tspan class="key">Contrib:</tspan> <tspan id="contrib_data" class="value">47</tspan>
     </text>
 
     <text x="20" y="274" class="mono body">
