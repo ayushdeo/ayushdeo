@@ -1,140 +1,102 @@
-<?xml version='1.0' encoding='UTF-8'?>
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720">
+<svg width="1200" height="720" viewBox="0 0 1200 720" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#05080f"/>
+      <stop offset="0%" stop-color="#05070d"/>
       <stop offset="100%" stop-color="#0d1117"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#9b5cff"/>
     </linearGradient>
     <style>
       .mono { font-family: Consolas, Menlo, Monaco, "SFMono-Regular", monospace; }
-      .title { font-size: 30px; font-weight: 700; fill: #d7e2ee; }
+      .title { font-size: 34px; font-weight: 700; fill: #e6edf3; }
       .sub { font-size: 14px; fill: #9fb0c3; }
-      .txt { font-size: 13px; fill: #c9d1d9; }
+      .label { font-size: 11px; letter-spacing: 0.16em; fill: #8b949e; }
+      .body { font-size: 13px; fill: #c9d1d9; }
       .small { font-size: 12px; fill: #c9d1d9; }
-      .dim { fill: #7d8590; }
-      .accent { fill: #58a6ff; }
-      .accent2 { fill: #ffa657; }
-      .terminal { fill: rgba(255,255,255,0.03); stroke: rgba(255,255,255,0.08); stroke-width: 1; }
       .chip { fill: rgba(88,166,255,0.08); stroke: rgba(88,166,255,0.22); stroke-width: 1; }
+      .chip2 { fill: rgba(155,92,255,0.10); stroke: rgba(155,92,255,0.22); stroke-width: 1; }
+      .panel { fill: rgba(255,255,255,0.03); stroke: rgba(255,255,255,0.08); stroke-width: 1; }
       .line { stroke: rgba(255,255,255,0.05); stroke-width: 1; }
+      .accentText { fill: #58a6ff; }
+      .accentText2 { fill: #ffa657; }
     </style>
   </defs>
 
   <rect width="1200" height="720" rx="24" fill="url(#bg)"/>
-  <rect x="24" y="24" width="1152" height="672" rx="20" class="terminal"/>
+  <rect x="24" y="24" width="1152" height="672" rx="20" class="panel"/>
 
-  <!-- terminal bar -->
   <rect x="24" y="24" width="1152" height="44" rx="20" fill="rgba(255,255,255,0.02)"/>
   <circle cx="52" cy="46" r="6" fill="#ff5f56"/>
   <circle cx="74" cy="46" r="6" fill="#ffbd2e"/>
   <circle cx="96" cy="46" r="6" fill="#27c93f"/>
-  <text x="132" y="50" class="mono small dim">ayush@deo:~/profile$</text>
+  <text x="132" y="50" class="mono small" fill="#7d8590">ayush@deo:~/profile$</text>
 
-  <text x="54" y="102" class="mono title">Ayush Deo</text>
-  <text x="54" y="126" class="mono sub">AI Researcher | Agentic Systems | LLMs | Gene Sequencing AI | Graphic Design</text>
-  <line x1="54" y1="146" x2="1148" y2="146" class="line"/>
+  <text x="56" y="104" class="mono title">Ayush Deo</text>
+  <text x="56" y="130" class="mono sub">AI Researcher | Agentic Systems | LLMs | Gene Sequencing AI | Graphic Design</text>
+  <line x1="56" y1="150" x2="1144" y2="150" class="line"/>
 
-<defs>
-  <clipPath id="asciiClip">
-    <rect x="0" y="0" width="290" height="360" rx="16"/>
-  </clipPath>
-</defs>
+  <g transform="translate(56,176)">
+    <rect x="0" y="0" width="324" height="470" rx="18" class="chip"/>
+    <text x="20" y="30" class="mono label">PROFILE</text>
+    <text x="20" y="62" class="mono body">Research-first builder focused on</text>
+    <text x="20" y="82" class="mono body">LLM evaluation, agentic workflows,</text>
+    <text x="20" y="102" class="mono body">and bioinformatics-oriented AI.</text>
 
-<g transform="translate(54,170)">
-  <rect x="0" y="0" width="330" height="470" rx="16" class="chip"/>
-  <text x="18" y="28" class="mono txt dim">┌──────────────────────────────┐</text>
-  <text x="18" y="48" class="mono txt dim">│  [ascii] profile output       │</text>
-  <text x="18" y="68" class="mono txt dim">└──────────────────────────────┘</text>
+    <line x1="20" y1="130" x2="304" y2="130" class="line"/>
 
-  <g clip-path="url(#asciiClip)" transform="translate(18,92) scale(0.22)">
-    <text x="0" y="0" class="mono txt" font-size="10" xml:space="preserve">
-                ******=----=-----------=--::::------------------:----:::::-----------::-:::--:::::::::::-:--:--:-=-:::::-:--:::::-------          
-          #####**++=====--===----------:-::-----------:::---------::::::-------==-:-----:--:-::::::-::-:::-::::--------::::::----:          
-          --=+*+++==---------------==-------==----------::---+++++===-----::::-::::--:::::::::-::--:::------::-------:::::::::-:--          
-          ------------::-----::-------------------::::-*%%%@@@%**##****+=----=--------::::::-----:::----------::-----:::-:::::::::          
-          :-:----------------:::------------::::::--=#@@##*+---------===+++=------:::::---:::::---:-===------:--::-----::----:::::          
-          :----:::--:--------------:--------:::::-+%@@#+-------::-::::---======---::-::----::::::::-=-:::-::---::::::::::-::::::::          
-          --::----::---::----::--::------::::::--+%#*=---:--------::::::::---=--::::---:::-:::--::::::::---:::::------:--::::--::-          
-          :::::::::::::::::-:::::----::----::::-*%*=-:---------=+=-:::::::::::------:--::::::--:::::-::::-:::::::---::::::-:::::::          
-          :----:::---::---:::::::--:::--::-:::-=##=--:::::::=*****+=-:::::::::---:::----::--::::-----:::---:::--:-::::::::::---:::          
-          :::-::::::::--:--:::::::-:::-::::::::+##=-:---=**####*+------:::::::--::---:---::::::--:-----:::::--:::::-::::----:-::::          
-          :::-:::::::::::-::::-::::::--::::::::*#+--::==---=+**+=-======-:::::----:::::::::::--::-:::-:::::------::--:-------::-::          
-          :::::::::::::::::::::::::::::::::::::**=--::-=++=--+#+======+++=-:==-:-:-:--::::::----------:::--:::::::::::::::::::::::          
-          :--::::::::::::::::::::::::::::::::::=*+--:=++-===+*#*+*******++=-=+=-:::---::::--::----:--::::-::---::::::::----:::::.:          
-          :::::-::::::--::::::::::::::::::::::::=*+-:+*****#*##*********++===+=---:----------:::------::::--:-:-::::::::::::::::::          
-          :-:----:::::::::::::::::::-:::::::::::::=+-+**###**+++==++*+++++==++-:::-::::-=-:-:::--:::::::-:---:----::::::---:::::.:          
-          =======--------::--::::::::--:::::::::::-++=*****+**+++++==+++++=--::::-===::--:-----:-::::::--------::::::::.:-::::::::          
-          ==============+=======--==-===-----------=*+****++=++++*++**++++==:----::::::::::::::::----:--::::::-::::::::::::::::::.          
-          ---------==+===+====++===============+++++***#*************+++====-=====-=-------------:---::::::::::::::::::-::::::::::          
-          =---------===--====------===-============+==++**********++++==--====================---======---=======-==--------------          
-          =---------------===------=--=---==---==========+****++=====----==+=========---====--==========-============----=-=======          
-          ----::--=--===------------=======-==---===----=--=+++======-===++++=++*=+++-------==========---==-==---=-----======-----          
-          ===-:----===---------:---====+==---=--==--------:--++++======++++++++=-::=+*++*=-=*=---===-----=---=-===------------::--          
-          +*=-===---=---=+*+=--:-=-=++=----------------------=*+++++++++++++++-:::::--+++-+%#%##*=--=---==--=-----==--------------          
-          ##*###%%##*****#**####**#*##*=+====-----------=-:::-+*++++++++***+=::::::::--**#%#####*++---::---------------:--------=-          
-          *##**#%***++**++++++#**#****######%##*+++=========**+**++++++**+=-::::::::::-*+=++++=------=+=-----------=--::----=--==-          
-          ###*%%#*#***+++==++=+=====-==+=+=======------=+*##%*=#*++++++=-::::::::::::::----=+-:---------============---==---=-==--          
-          +*****############%###***+===++==--------=++%%%%--%*=**=---::::::::::::::::::-::-=-:-::::::::---=---------=============-          
-          -------===-==++++**########******+++++===+*==+#--**++=*+-::::::::::::::-:::::::::::::::::::::::::------::---------------          
-          ::::::::::::::::--=+==+++++====++====+*#=+-=--*:-*==+-+++----------:::--:::-::::::::::::::::::::::-------------:-::--:::          
-          ::::::::::::::::::-:-:-------:------=***=---:+=--*--=----=--------------:::-::::::::::::::::::::::-=======--=-----------          
-          :::::::::::::::::::::--:-:--:--:::-=**==-:::-====*:--=------------------::::::::::::::::::::::::::::------------------=-          
-          ::::::::::::::::::::::-::::::::::-+#+=-:::::----+-:--------------------::::::::::::::::::::::::::::::::::::--:---:--::--          
-          ::::::::::::::::::::::::::::::---+#+=-::::::-:---:---------------------:::::::::::::::::::::::::::::::::::::::::::::::::          
-          :::-::::::::::::::::::::----::::=*+--:::::::::---:-------------------:::::::::::::::::::::::::::::::::-:::::::::::::::::          
-          :::::::::::::--::::-::-::::::-:-**=-:::::::::----:-----------------:::::::::::::::::::::::::::::::::::::::::::::::::::::          
-          ::::::::::::---:----:--:-:::::-*#=-::::::::::----:--------------::::::::::::::::::::::::::::::::::::::::::::::::::::::::          
-          :::::::::::::::::--::::::---::=*+=-::::::::::---:---::----::::::::::::::::::::::::::::::::::::::::::::::::::::::-:::::::          
-          ::::::::::::::--:::::-::::-:-=#*=-::::::::::::-:::::::::::::::::::::::::::::::::::::::::::::::::::::------::::::::::::::          
-          -:::--:-----::::::::::--:::-=#*+--::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::--=*##***++-::::::::::::::          
-          -=======================---+@@@%%#*+--:::::.::::::::::::::::::::::::::::::::::::::::::::::-=*########***+=-:::::::::::::          
-          =======================++=*@@@%%#####**=-:::=::::::::::::::::::::::::::::::::::::::::::::-+##########****+=-::::::::::::          
-          ======++===++++++++++==++*@@@@%#####**++=--=+=::::::::::::::::::::::::::::::::::::::::::::=*#########***+++=::::::::::::          
-          =======+++++++++++++++++*@@@@%#####***+==+++++=:-::::::::::::::::::::::::::::::::::::::::::+*########****+++=---::::::::          
-          ++==++++*####***********@@@@%#####***+==++++++++--::::::::::::::::::::::::::::::::::::::::::+****#*******+++==========+*          
-    </text>
+    <text x="20" y="164" class="mono label">HIGHLIGHTS</text>
+    <text x="20" y="194" class="mono body">• USC M.S. Computer Science</text>
+    <text x="20" y="218" class="mono body">• 6 published papers</text>
+    <text x="20" y="242" class="mono body">• TCS AI/ML intern</text>
+    <text x="20" y="266" class="mono body">• Bellevidco co-founder</text>
+    <text x="20" y="290" class="mono body">• Strong design eye</text>
+
+    <line x1="20" y1="322" x2="304" y2="322" class="line"/>
+
+    <text x="20" y="356" class="mono label">CONTACT</text>
+    <text x="20" y="386" class="mono body">theayushdeo@gmail.com</text>
+    <text x="20" y="410" class="mono body">linkedin.com/in/ayushdeo</text>
+    <text x="20" y="434" class="mono body">github.com/ayushdeo</text>
   </g>
 
-  <text x="18" y="342" class="mono small dim">┌──────────────────────────────┐</text>
-  <text x="18" y="362" class="mono small">│  style: terminal / text-first │</text>
-  <text x="18" y="382" class="mono small">│  vibe: research + design      │</text>
-  <text x="18" y="402" class="mono small">│  mode: dark only              │</text>
-  <text x="18" y="422" class="mono small dim">└──────────────────────────────┘</text>
-</g>
+  <g transform="translate(404,176)">
+    <rect x="0" y="0" width="720" height="120" rx="18" class="chip2"/>
+    <text x="18" y="30" class="mono label">SUMMARY</text>
+    <text x="18" y="58" class="mono body">MS CS at USC. Building systems at the intersection of LLMs, agents, and applied research.</text>
+    <text x="18" y="82" class="mono body">I care about useful automation, clean interfaces, and technical work that reads well on a page.</text>
+    <text x="18" y="106" class="mono body">Current direction: evaluation, multimodal AI, and gene sequencing intelligence.</text>
 
-  <!-- right terminal content -->
-  <g transform="translate(410,170)">
-    <text x="0" y="0" class="mono txt dim">$ whoami</text>
-    <text x="0" y="22" class="mono txt">Ayush Deo — USC M.S. CS</text>
-    <text x="0" y="44" class="mono txt">Researcher focused on LLMs, evaluation, and agentic workflows.</text>
-    <text x="0" y="66" class="mono txt">I also build systems for gene sequencing AI and visual design.</text>
+    <rect x="0" y="146" width="350" height="132" rx="18" class="chip"/>
+    <text x="18" y="176" class="mono label">EDUCATION</text>
+    <text x="18" y="204" class="mono body">University of Southern California</text>
+    <text x="18" y="226" class="mono small">M.S. Computer Science · 2025–2027</text>
+    <text x="18" y="252" class="mono body">NMIMS Mukesh Patel School of Technology</text>
+    <text x="18" y="274" class="mono small">B.Tech. Information Technology · CGPA 3.62/4.0</text>
 
-    <line x1="0" y1="88" x2="670" y2="88" class="line"/>
+    <rect x="370" y="146" width="350" height="132" rx="18" class="chip"/>
+    <text x="388" y="176" class="mono label">RESEARCH</text>
+    <text x="388" y="204" class="mono body">6 published papers</text>
+    <text x="388" y="226" class="mono small">Vision-language captioning</text>
+    <text x="388" y="248" class="mono small">GPT-4o-mini bias analysis</text>
+    <text x="388" y="270" class="mono small">LLM evaluation and multimodal systems</text>
 
-    <text x="0" y="118" class="mono txt dim">$ cat education.txt</text>
-    <text x="0" y="140" class="mono txt">University of Southern California</text>
-    <text x="0" y="160" class="mono small">M.S. Computer Science · 2025–2027</text>
-    <text x="0" y="182" class="mono txt">NMIMS Mukesh Patel School of Technology</text>
-    <text x="0" y="202" class="mono small">B.Tech. Information Technology · CGPA 3.62/4.0</text>
+    <rect x="0" y="298" width="350" height="132" rx="18" class="chip2"/>
+    <text x="18" y="328" class="mono label">EXPERIENCE</text>
+    <text x="18" y="356" class="mono body">TCS · AI/ML Intern, Cloud.AI Division</text>
+    <text x="18" y="378" class="mono small">7-agent automation, hybrid reasoning, RAG pipelines</text>
+    <text x="18" y="404" class="mono body">Bellevidco · Co-Founder</text>
+    <text x="18" y="426" class="mono small">Data-driven consultancy with analytics systems</text>
 
-    <text x="0" y="240" class="mono txt dim">$ cat research.txt</text>
-    <text x="0" y="262" class="mono txt">6 published papers</text>
-    <text x="0" y="282" class="mono small">Vision-language captioning · GPT-4o-mini bias analysis</text>
-    <text x="0" y="304" class="mono small">LLM evaluation · multimodal systems · bioinformatics AI</text>
+    <rect x="370" y="298" width="350" height="132" rx="18" class="chip2"/>
+    <text x="388" y="328" class="mono label">STACK</text>
+    <text x="388" y="356" class="mono body">Python | SQL | TypeScript | C++</text>
+    <text x="388" y="380" class="mono body">PyTorch | Hugging Face | Azure AI</text>
+    <text x="388" y="404" class="mono body">AutoGen | Docker | React | NLP | RAG</text>
 
-    <text x="0" y="342" class="mono txt dim">$ cat experience.txt</text>
-    <text x="0" y="364" class="mono txt">TCS · AI/ML Intern, Cloud.AI Division</text>
-    <text x="0" y="384" class="mono small">Built 7-agent automation, hybrid reasoning, and RAG pipelines.</text>
-    <text x="0" y="406" class="mono txt">Bellevidco · Co-Founder</text>
-    <text x="0" y="426" class="mono small">Scaled a data-driven consultancy with analytics systems.</text>
-
-    <text x="0" y="464" class="mono txt dim">$ cat stack.txt</text>
-    <text x="0" y="486" class="mono txt">Python | SQL | TypeScript | C++ | PyTorch | Hugging Face</text>
-    <text x="0" y="508" class="mono txt">Azure AI | AutoGen | Docker | React | NLP | RAG</text>
-
-    <text x="0" y="546" class="mono txt dim">$ cat contact.txt</text>
-    <text x="0" y="568" class="mono txt">theayushdeo@gmail.com</text>
-    <text x="230" y="568" class="mono txt">linkedin.com/in/ayushdeo</text>
-    <text x="470" y="568" class="mono txt">github.com/ayushdeo</text>
+    <rect x="0" y="450" width="720" height="72" rx="18" class="chip"/>
+    <text x="18" y="480" class="mono label">FOCUS</text>
+    <text x="18" y="508" class="mono body">Agentic AI systems · LLM reasoning · gene sequencing AI · clean visual identity</text>
   </g>
 </svg>
