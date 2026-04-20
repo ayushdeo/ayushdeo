@@ -53,7 +53,7 @@
     <text x="20" y="166" class="mono label">LIVE STATS</text>
 
     <text x="20" y="196" class="mono body">
-      <tspan class="key">Age:</tspan> <tspan id="age_data" class="value">22 years, 8 months, 15 days</tspan>
+      <tspan class="key">Age:</tspan> <tspan id="age_data" class="value">22 years, 8 months, 16 days</tspan>
     </text>
     
     <text x="20" y="218" class="mono body">
