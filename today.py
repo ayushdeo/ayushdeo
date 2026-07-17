@@ -1,4 +1,3 @@
-import datetime
 import hashlib
 import os
 import time
@@ -6,7 +5,6 @@ from pathlib import Path
 from typing import Dict, List, Optional
 
 import requests
-from dateutil import relativedelta
 from lxml import etree
 
 # GitHub Actions should provide these secrets / env vars:
@@ -14,11 +12,6 @@ from lxml import etree
 # - USER_NAME: your GitHub username
 HEADERS = {"authorization": "token " + os.environ["ACCESS_TOKEN"]}
 USER_NAME = os.environ["USER_NAME"]
-
-# Optional: set your birthday here for the age counter.
-# If you do not want an age counter, you can remove daily_readme() usage below
-# and the matching SVG fields.
-BIRTHDAY = datetime.datetime(2003, 8, 4)
 
 QUERY_COUNT = {
     "user_getter": 0,
@@ -32,30 +25,6 @@ QUERY_COUNT = {
 ROOT = Path(__file__).resolve().parent
 CACHE_DIR = ROOT / "cache"
 CACHE_DIR.mkdir(exist_ok=True)
-
-
-def daily_readme(birthday: datetime.datetime) -> str:
-    """
-    Returns the length of time since the birthday.
-    Example: 'XX years, XX months, XX days'
-    """
-    diff = relativedelta.relativedelta(datetime.datetime.today(), birthday)
-    return "{} {}, {} {}, {} {}{}".format(
-        diff.years,
-        "year" + format_plural(diff.years),
-        diff.months,
-        "month" + format_plural(diff.months),
-        diff.days,
-        "day" + format_plural(diff.days),
-        " 🎂" if (diff.months == 0 and diff.days == 0) else "",
-    )
-
-
-def format_plural(unit: int) -> str:
-    """
-    Returns a properly formatted plural suffix.
-    """
-    return "s" if unit != 1 else ""
 
 
 def simple_request(func_name: str, query: str, variables: Dict) -> requests.Response:
@@ -411,9 +380,9 @@ def follower_getter(username: str) -> int:
     return int(request.json()["data"]["user"]["followers"]["totalCount"])
 
 
-def svg_overwrite(filename: str, age_data: str, commit_data: int, star_data: int, repo_data: int, contrib_data: int, follower_data: int, loc_data: List[str]):
+def svg_overwrite(filename: str, commit_data: int, star_data: int, repo_data: int, contrib_data: int, follower_data: int, loc_data: List[str]):
     """
-    Parse SVG files and update elements with age, commits, stars, repositories, followers, and LOC.
+    Parse SVG files and update elements with commits, stars, repositories, followers, and LOC.
     """
     tree = etree.parse(str(ROOT / filename))
     root = tree.getroot()
@@ -425,8 +394,6 @@ def svg_overwrite(filename: str, age_data: str, commit_data: int, star_data: int
     justify_format(root, "loc_data", loc_data[2], 9)
     justify_format(root, "loc_add", loc_data[0])
     justify_format(root, "loc_del", loc_data[1], 7)
-    # Optional age field if present in your SVGs:
-    justify_format(root, "age_data", age_data)
     tree.write(str(ROOT / filename), encoding="utf-8", xml_declaration=True)
 
 
@@ -483,9 +450,6 @@ if __name__ == "__main__":
     OWNER_ID, acc_date = user_data
     formatter("account data", user_time)
 
-    age_data, age_time = perf_counter(daily_readme, BIRTHDAY)
-    formatter("age calculation", age_time)
-
     total_loc, loc_time = perf_counter(loc_query, ["OWNER", "COLLABORATOR", "ORGANIZATION_MEMBER"], 7)
     formatter("LOC (cached)", loc_time) if total_loc[-1] else formatter("LOC (no cache)", loc_time)
 
@@ -498,13 +462,13 @@ if __name__ == "__main__":
     for index in range(len(total_loc) - 1):
         total_loc[index] = "{:,}".format(total_loc[index])
 
-    svg_overwrite("profile.svg", age_data, commit_data, star_data, repo_data, contrib_data, follower_data, total_loc[:-1])
-    total_time = user_time + age_time + loc_time + commit_time + star_time + repo_time + contrib_time + follower_time
+    svg_overwrite("profile.svg", commit_data, star_data, repo_data, contrib_data, follower_data, total_loc[:-1])
+    total_time = user_time + loc_time + commit_time + star_time + repo_time + contrib_time + follower_time
     print(
-        "\033[F\033[F\033[F\033[F\033[F\033[F\033[F\033[F",
+        "\033[F\033[F\033[F\033[F\033[F\033[F\033[F",
         "{:<21}".format("Total function time:"),
         "{:>11}".format("%.4f" % total_time + " s "),
-        "\033[E\033[E\033[E\033[E\033[E\033[E\033[E\033[E",
+        "\033[E\033[E\033[E\033[E\033[E\033[E\033[E",
         sep="",
     )
 

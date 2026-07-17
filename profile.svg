@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1080" viewBox="0 0 1200 1080">
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1092" viewBox="0 0 1200 1092">
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0%" stop-color="#05070d"/>
@@ -26,8 +26,8 @@
     </style>
   </defs>
 
-  <rect width="1200" height="1080" rx="24" fill="url(#bg)"/>
-  <rect x="24" y="24" width="1152" height="1032" rx="20" class="panel"/>
+  <rect width="1200" height="1092" rx="24" fill="url(#bg)"/>
+  <rect x="24" y="24" width="1152" height="1044" rx="20" class="panel"/>
 
   <rect x="24" y="24" width="1152" height="44" rx="20" fill="rgba(255,255,255,0.02)"/>
   <circle cx="52" cy="46" r="6" fill="#ff5f56"/>
@@ -43,109 +43,113 @@
   <g transform="translate(56,180)">
 
     <!-- LIVE STATS -->
-    <rect x="0" y="0" width="336" height="210" rx="18" class="chip"/>
+    <rect x="0" y="0" width="336" height="178" rx="18" class="chip"/>
     <text x="20" y="30" class="mono label">LIVE GITHUB STATS</text>
-    <text x="20" y="60" class="mono body">
-      <tspan class="key">Age:</tspan> <tspan id="age_data" class="value">22 years, 11 months, 13 days</tspan>
-    </text>
-    <text x="20" y="86" class="mono body">
+    <text x="20" y="58" class="mono body">
       <tspan class="key">Repos:</tspan> <tspan id="repo_data" class="value">28</tspan><tspan>    </tspan><tspan class="key">Stars:</tspan> <tspan id="star_data" class="value">4</tspan>
     </text>
-    <text x="20" y="112" class="mono body">
+    <text x="20" y="84" class="mono body">
       <tspan class="key">Commits:</tspan> <tspan id="commit_data" class="value">0</tspan>
     </text>
-    <text x="20" y="138" class="mono body">
+    <text x="20" y="110" class="mono body">
       <tspan class="key">Followers:</tspan> <tspan id="follower_data" class="value">1</tspan>
     </text>
-    <text x="20" y="164" class="mono body">
+    <text x="20" y="136" class="mono body">
       <tspan class="key">Contrib:</tspan> <tspan id="contrib_data" class="value">49</tspan>
     </text>
-    <text x="20" y="190" class="mono body">
+    <text x="20" y="162" class="mono body">
       <tspan class="key">LOC:</tspan> <tspan id="loc_data" class="value">0</tspan><tspan> (+</tspan><tspan id="loc_add" class="value">0</tspan><tspan>, -</tspan><tspan id="loc_del" class="value">0</tspan><tspan>)</tspan>
     </text>
 
     <!-- EDUCATION -->
-    <rect x="0" y="228" width="336" height="172" rx="18" class="chip2"/>
-    <text x="20" y="256" class="mono label">EDUCATION</text>
-    <text x="20" y="284" class="mono body">USC — M.S. Computer Science</text>
-    <text x="20" y="308" class="mono muted">2025–2027 · Viterbi Engineering</text>
-    <text x="20" y="340" class="mono body">NMIMS (MPSTME) — B.Tech IT</text>
-    <text x="20" y="364" class="mono muted">2021–2025 · CGPA 3.62 / 4.0</text>
+    <rect x="0" y="194" width="336" height="154" rx="18" class="chip2"/>
+    <text x="20" y="222" class="mono label">EDUCATION</text>
+    <text x="20" y="250" class="mono body">USC — M.S. Computer Science</text>
+    <text x="20" y="274" class="mono muted">2025–2027 · Viterbi Engineering</text>
+    <text x="20" y="306" class="mono body">NMIMS (MPSTME) — B.Tech IT</text>
+    <text x="20" y="330" class="mono muted">2021–2025 · CGPA 3.62 / 4.0</text>
 
     <!-- AWARDS -->
-    <rect x="0" y="418" width="336" height="226" rx="18" class="chip"/>
-    <text x="20" y="446" class="mono label">AWARDS &amp; HONORS</text>
-    <text x="20" y="474" class="mono body"><tspan class="key">&gt;</tspan> Crowe National Case Comp — 1st</text>
-    <text x="20" y="498" class="mono body"><tspan class="key">&gt;</tspan> USC Global Health Case — 3rd</text>
-    <text x="20" y="522" class="mono body"><tspan class="key">&gt;</tspan> ONDC Build for Bharat — 2nd</text>
-    <text x="36" y="544" class="mono muted">$1,000 · Google Cloud hackathon</text>
-    <text x="20" y="570" class="mono body"><tspan class="key">&gt;</tspan> EY India Scholarship — Top 50</text>
-    <text x="20" y="594" class="mono body"><tspan class="key">&gt;</tspan> Tata Imagination — Top 1%</text>
-    <text x="20" y="618" class="mono body"><tspan class="key">&gt;</tspan> IBM Data Science Professional</text>
+    <rect x="0" y="364" width="336" height="220" rx="18" class="chip"/>
+    <text x="20" y="392" class="mono label">AWARDS &amp; HONORS</text>
+    <text x="20" y="420" class="mono body"><tspan class="key">&gt;</tspan> Crowe National Case Comp — 1st</text>
+    <text x="20" y="444" class="mono body"><tspan class="key">&gt;</tspan> USC Global Health Case — 3rd</text>
+    <text x="20" y="468" class="mono body"><tspan class="key">&gt;</tspan> ONDC Build for Bharat — 2nd</text>
+    <text x="36" y="490" class="mono muted">$1,000 · Google Cloud hackathon</text>
+    <text x="20" y="514" class="mono body"><tspan class="key">&gt;</tspan> EY India Scholarship — Top 50</text>
+    <text x="20" y="538" class="mono body"><tspan class="key">&gt;</tspan> Tata Imagination — Top 1%</text>
+    <text x="20" y="562" class="mono body"><tspan class="key">&gt;</tspan> IBM Data Science Professional</text>
+
+    <!-- LEADERSHIP -->
+    <rect x="0" y="600" width="336" height="120" rx="18" class="chip2"/>
+    <text x="20" y="628" class="mono label">LEADERSHIP</text>
+    <text x="20" y="656" class="mono body"><tspan class="key">&gt;</tspan> GRIDS USC — Director of AI</text>
+    <text x="20" y="680" class="mono body"><tspan class="key">&gt;</tspan> Head, Content &amp; Design — MUNSoc</text>
+    <text x="20" y="704" class="mono body"><tspan class="key">&gt;</tspan> Executive, ACM MPSTME</text>
 
     <!-- CONTACT -->
-    <rect x="0" y="662" width="336" height="138" rx="18" class="chip2"/>
-    <text x="20" y="690" class="mono label">CONTACT</text>
-    <text x="20" y="718" class="mono body">theayushdeo@gmail.com</text>
-    <text x="20" y="742" class="mono body">linkedin.com/in/ayushdeo</text>
-    <text x="20" y="766" class="mono body">github.com/ayushdeo</text>
+    <rect x="0" y="736" width="336" height="126" rx="18" class="chip"/>
+    <text x="20" y="764" class="mono label">CONTACT</text>
+    <text x="20" y="792" class="mono body">theayushdeo@gmail.com</text>
+    <text x="20" y="816" class="mono body">linkedin.com/in/ayushdeo</text>
+    <text x="20" y="840" class="mono body">github.com/ayushdeo</text>
   </g>
 
   <!-- RIGHT COLUMN -->
   <g transform="translate(416,180)">
 
     <!-- SUMMARY -->
-    <rect x="0" y="0" width="728" height="134" rx="18" class="chip2"/>
-    <text x="18" y="30" class="mono label">SUMMARY</text>
-    <text x="18" y="58" class="mono body">MS CS @ USC. Software engineer who ships production systems — distributed data pipelines,</text>
-    <text x="18" y="82" class="mono body">cloud deployments, and multi-agent AI — with a focus on correctness and measurable impact.</text>
-    <text x="18" y="106" class="mono body">6 peer-reviewed publications in NLP &amp; computer vision. Case-competition &amp; hackathon winner.</text>
+    <rect x="0" y="0" width="728" height="132" rx="18" class="chip2"/>
+    <text x="18" y="28" class="mono label">SUMMARY</text>
+    <text x="18" y="56" class="mono body">MS CS @ USC. Software engineer who ships production systems — distributed data pipelines,</text>
+    <text x="18" y="80" class="mono body">cloud deployments, and multi-agent AI — with a focus on correctness and measurable impact.</text>
+    <text x="18" y="104" class="mono body">6 peer-reviewed publications in NLP &amp; computer vision. Case-competition &amp; hackathon winner.</text>
 
     <!-- EXPERIENCE -->
-    <rect x="0" y="152" width="728" height="294" rx="18" class="chip"/>
-    <text x="18" y="180" class="mono label">EXPERIENCE</text>
+    <rect x="0" y="158" width="728" height="294" rx="18" class="chip"/>
+    <text x="18" y="186" class="mono label">EXPERIENCE</text>
 
-    <text x="18" y="208" class="mono body">USC Dornsife — SWE, Research Assistant</text>
-    <text x="710" y="208" text-anchor="end" class="mono muted">2026 – Present</text>
-    <text x="30" y="230" class="mono small">Fixed timing drift across 864 prod tasks; zero-data-loss PostgreSQL migration; operates a</text>
-    <text x="30" y="252" class="mono small">10-container Docker platform serving 150 researchers (React/TS · Django · Azure)</text>
+    <text x="18" y="214" class="mono body">USC Dornsife — SWE, Research Assistant</text>
+    <text x="710" y="214" text-anchor="end" class="mono muted">2026 – Present</text>
+    <text x="30" y="236" class="mono small">Fixed timing drift across 864 prod tasks; zero-data-loss PostgreSQL migration; operates a</text>
+    <text x="30" y="258" class="mono small">10-container Docker platform serving 150 researchers (React/TS · Django · Azure)</text>
 
-    <text x="18" y="282" class="mono body">TCS — Software Engineering Intern, Cloud.AI</text>
-    <text x="710" y="282" text-anchor="end" class="mono muted">Jan – Jun 2025</text>
-    <text x="30" y="304" class="mono small">40% faster fraud investigations (Azure SQL → Cosmos graph); bank reporting 2 wks → &lt;10 min</text>
-    <text x="30" y="326" class="mono small">via a multi-agent RAG pipeline (AutoGen · Azure OpenAI)</text>
+    <text x="18" y="288" class="mono body">TCS — Software Engineering Intern, Cloud.AI</text>
+    <text x="710" y="288" text-anchor="end" class="mono muted">Jan – Jun 2025</text>
+    <text x="30" y="310" class="mono small">40% faster fraud investigations (Azure SQL → Cosmos graph); bank reporting 2 wks → &lt;10 min</text>
+    <text x="30" y="332" class="mono small">via a multi-agent RAG pipeline (AutoGen · Azure OpenAI)</text>
 
-    <text x="18" y="356" class="mono body">Compusoft Advisors — SWE Intern (AI)</text>
-    <text x="710" y="356" text-anchor="end" class="mono muted">May – Jul 2024</text>
-    <text x="30" y="378" class="mono small">LLM-enabled dealer workflow adopted by 20+ managers; cut manual data entry 50%</text>
+    <text x="18" y="362" class="mono body">Compusoft Advisors — SWE Intern (AI)</text>
+    <text x="710" y="362" text-anchor="end" class="mono muted">May – Jul 2024</text>
+    <text x="30" y="384" class="mono small">LLM-enabled dealer workflow adopted by 20+ managers; cut manual data entry 50%</text>
 
-    <text x="18" y="408" class="mono body">BelleVidco — Co-Founder</text>
-    <text x="710" y="408" text-anchor="end" class="mono muted">2023 – 2025</text>
-    <text x="30" y="430" class="mono small">$12K revenue at 70% margins; led a team of 8; standardized delivery workflows</text>
+    <text x="18" y="414" class="mono body">BelleVidco — Co-Founder</text>
+    <text x="710" y="414" text-anchor="end" class="mono muted">2023 – 2025</text>
+    <text x="30" y="436" class="mono small">$12K revenue at 70% margins; led a team of 8; standardized delivery workflows</text>
 
     <!-- RESEARCH -->
-    <rect x="0" y="464" width="728" height="206" rx="18" class="chip2"/>
-    <text x="18" y="492" class="mono label">RESEARCH — 6 PEER-REVIEWED PUBLICATIONS</text>
+    <rect x="0" y="478" width="728" height="200" rx="18" class="chip2"/>
+    <text x="18" y="506" class="mono label">RESEARCH — 6 PEER-REVIEWED PUBLICATIONS</text>
 
-    <text x="18" y="520" class="mono body">Sentiment-Aware Caption Generation</text>
-    <text x="710" y="520" text-anchor="end" class="mono muted">IJESIT · under review</text>
-    <text x="18" y="544" class="mono body">Racism Bias Detection in GPT-4o-mini</text>
-    <text x="710" y="544" text-anchor="end" class="mono muted">Springer · ICCTRDA</text>
-    <text x="18" y="568" class="mono body">Unified Deepfake Detection (business risk)</text>
-    <text x="710" y="568" text-anchor="end" class="mono muted">Springer · ICGER 2024</text>
-    <text x="18" y="592" class="mono body">DL Seat Allocation for Indian Railways</text>
-    <text x="710" y="592" text-anchor="end" class="mono muted">Springer · DOI</text>
-    <text x="18" y="616" class="mono body">McDonald's Ops + Social Sentiment Analysis</text>
-    <text x="710" y="616" text-anchor="end" class="mono muted">PAN IIM 2023</text>
-    <text x="18" y="640" class="mono body">India IT-Sector Growth &amp; Sustainability</text>
-    <text x="710" y="640" text-anchor="end" class="mono muted">Springer · book chapter</text>
+    <text x="18" y="534" class="mono body">Sentiment-Aware Caption Generation</text>
+    <text x="710" y="534" text-anchor="end" class="mono muted">IJESIT · under review</text>
+    <text x="18" y="558" class="mono body">Racism Bias Detection in GPT-4o-mini</text>
+    <text x="710" y="558" text-anchor="end" class="mono muted">Springer · ICCTRDA</text>
+    <text x="18" y="582" class="mono body">Unified Deepfake Detection (business risk)</text>
+    <text x="710" y="582" text-anchor="end" class="mono muted">Springer · ICGER 2024</text>
+    <text x="18" y="606" class="mono body">DL Seat Allocation for Indian Railways</text>
+    <text x="710" y="606" text-anchor="end" class="mono muted">Springer · DOI</text>
+    <text x="18" y="630" class="mono body">McDonald's Ops + Social Sentiment Analysis</text>
+    <text x="710" y="630" text-anchor="end" class="mono muted">PAN IIM 2023</text>
+    <text x="18" y="654" class="mono body">India IT-Sector Growth &amp; Sustainability</text>
+    <text x="710" y="654" text-anchor="end" class="mono muted">Springer · book chapter</text>
 
     <!-- SKILLS -->
-    <rect x="0" y="688" width="728" height="160" rx="18" class="chip"/>
-    <text x="18" y="716" class="mono label">SKILLS</text>
-    <text x="18" y="744" class="mono body"><tspan class="key">Languages</tspan>   Python · Java · C++ · SQL · TypeScript</text>
-    <text x="18" y="768" class="mono body"><tspan class="key">Backend</tspan>     Django · FastAPI · React · PostgreSQL · REST APIs</text>
-    <text x="18" y="792" class="mono body"><tspan class="key">Cloud/Ops</tspan>   Azure (OpenAI · Gremlin) · AWS · OCI · Docker · GitHub Actions</text>
-    <text x="18" y="816" class="mono body"><tspan class="key">AI / ML</tspan>     LLMs · agentic AI · RAG · LangChain · Hugging Face · PyTorch · FAISS</text>
+    <rect x="0" y="704" width="728" height="158" rx="18" class="chip"/>
+    <text x="18" y="732" class="mono label">SKILLS</text>
+    <text x="18" y="760" class="mono body"><tspan class="key">Languages</tspan>   Python · Java · C++ · SQL · TypeScript</text>
+    <text x="18" y="784" class="mono body"><tspan class="key">Backend</tspan>     Django · FastAPI · React · PostgreSQL · REST APIs</text>
+    <text x="18" y="808" class="mono body"><tspan class="key">Cloud/Ops</tspan>   Azure (OpenAI · Gremlin) · AWS · OCI · Docker · GitHub Actions</text>
+    <text x="18" y="832" class="mono body"><tspan class="key">AI / ML</tspan>     LLMs · agentic AI · RAG · LangChain · Hugging Face · PyTorch · FAISS</text>
   </g>
 </svg>
