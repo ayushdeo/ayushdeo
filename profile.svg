@@ -36,7 +36,7 @@
   <text x="132" y="50" class="mono small" fill="#7d8590">ayush@deo:~/profile$</text>
 
   <text x="56" y="104" class="mono title">Ayush Deo</text>
-  <text x="56" y="130" class="mono sub">AI Researcher | Agentic Systems | LLMs | Gene Sequencing AI | Graphic Design</text>
+  <text x="56" y="130" class="mono sub">Software Engineer · MS CS @ USC · Distributed Systems · Agentic AI · LLM Eval</text>
   <line x1="56" y1="150" x2="1144" y2="150" class="line"/>
 
   <!-- LEFT COLUMN -->
@@ -44,40 +44,36 @@
     <rect x="0" y="0" width="324" height="470" rx="18" class="chip"/>
 
     <text x="20" y="30" class="mono label">PROFILE</text>
-    <text x="20" y="60" class="mono body">Research-first builder focused on</text>
-    <text x="20" y="82" class="mono body">LLM evaluation, agentic workflows,</text>
-    <text x="20" y="104" class="mono body">and bioinformatics-oriented AI.</text>
+    <text x="20" y="60" class="mono body">Software engineer building</text>
+    <text x="20" y="82" class="mono body">production systems: distributed</text>
+    <text x="20" y="104" class="mono body">pipelines, cloud, agentic AI.</text>
 
     <line x1="20" y1="132" x2="304" y2="132" class="line"/>
 
-    <text x="20" y="166" class="mono label">LIVE STATS</text>
+    <text x="20" y="166" class="mono label">HIGHLIGHTS</text>
 
     <text x="20" y="196" class="mono body">
-      <tspan class="key">Age:</tspan> <tspan id="age_data" class="value">22 years, 11 months, 12 days</tspan>
+      <tspan class="key">&gt;</tspan> Fraud triage 40% faster
     </text>
-    
+
     <text x="20" y="218" class="mono body">
-      <tspan class="key">Repos:</tspan> <tspan id="repo_data" class="value">28</tspan>
-      <tspan>   </tspan>
-      <tspan class="key">Stars:</tspan> <tspan id="star_data" class="value">4</tspan>
+      <tspan class="key">&gt;</tspan> Bank reports 2wk -&gt; 10min
     </text>
-    
+
     <text x="20" y="240" class="mono body">
-      <tspan class="key">Commits:</tspan> <tspan id="commit_data" class="value">0</tspan>
+      <tspan class="key">&gt;</tspan> Zero-data-loss PG migration
     </text>
-    
+
     <text x="20" y="262" class="mono body">
-      <tspan class="key">Followers:</tspan> <tspan id="follower_data" class="value">0</tspan>
+      <tspan class="key">&gt;</tspan> Prod Docker platform, 150 users
     </text>
-    
+
     <text x="20" y="284" class="mono body">
-      <tspan class="key">Contrib:</tspan> <tspan id="contrib_data" class="value">49</tspan>
+      <tspan class="key">&gt;</tspan> 6 peer-reviewed publications
     </text>
-    
+
     <text x="20" y="306" class="mono body">
-      <tspan class="key">LOC:</tspan> <tspan id="loc_data" class="value">0</tspan>
-      <tspan> (+</tspan><tspan id="loc_add" class="value">0</tspan>
-      <tspan>, -</tspan><tspan id="loc_del" class="value">0</tspan><tspan>)</tspan>
+      <tspan class="key">&gt;</tspan> 1st, Crowe National Case Comp
     </text>
 
     <line x1="20" y1="334" x2="304" y2="334" class="line"/>
@@ -92,9 +88,9 @@
   <g transform="translate(404,176)">
     <rect x="0" y="0" width="720" height="120" rx="18" class="chip2"/>
     <text x="18" y="30" class="mono label">SUMMARY</text>
-    <text x="18" y="58" class="mono body">MS CS at USC. Building systems at the intersection of LLMs, agents, and applied research.</text>
-    <text x="18" y="82" class="mono body">I care about useful automation, clean interfaces, and technical work that reads well on a page.</text>
-    <text x="18" y="106" class="mono body">Current direction: evaluation, multimodal AI, and gene sequencing intelligence.</text>
+    <text x="18" y="58" class="mono body">MS CS @ USC. I build and ship production systems — distributed data pipelines, cloud</text>
+    <text x="18" y="82" class="mono body">deployments, and multi-agent AI — with a focus on correctness, clean migrations, and</text>
+    <text x="18" y="106" class="mono body">measurable impact. 6 peer-reviewed publications in NLP and computer vision.</text>
 
     <rect x="0" y="146" width="350" height="132" rx="18" class="chip"/>
     <text x="18" y="176" class="mono label">EDUCATION</text>
@@ -112,16 +108,17 @@
 
     <rect x="0" y="298" width="350" height="132" rx="18" class="chip2"/>
     <text x="18" y="328" class="mono label">EXPERIENCE</text>
-    <text x="18" y="356" class="mono body">TCS · AI/ML Intern, Cloud.AI Division</text>
-    <text x="18" y="378" class="mono small">7-agent automation, hybrid reasoning, RAG pipelines</text>
-    <text x="18" y="404" class="mono body">Bellevidco · Co-Founder</text>
-    <text x="18" y="426" class="mono small">Data-driven consultancy with analytics systems</text>
+    <text x="18" y="356" class="mono body">USC Dornsife · SWE, Research Assistant</text>
+    <text x="18" y="378" class="mono small">Zero-loss PG migration · 864 tasks · Docker/Azure</text>
+    <text x="18" y="404" class="mono body">TCS · SWE Intern, Cloud.AI Division</text>
+    <text x="18" y="426" class="mono small">40% faster fraud triage · multi-agent RAG</text>
 
     <rect x="370" y="298" width="350" height="132" rx="18" class="chip2"/>
     <text x="388" y="328" class="mono label">STACK</text>
-    <text x="388" y="356" class="mono body">Python | SQL | TypeScript | C++</text>
-    <text x="388" y="380" class="mono body">PyTorch | Hugging Face | Azure AI</text>
-    <text x="388" y="404" class="mono body">AutoGen | Docker | React | NLP | RAG</text>
+    <text x="388" y="356" class="mono body">Python | Java | C++ | TypeScript | SQL</text>
+    <text x="388" y="380" class="mono body">Distributed systems | PostgreSQL | Docker</text>
+    <text x="388" y="404" class="mono body">Azure | AWS | GCP | CI/CD | React</text>
+    <text x="388" y="426" class="mono body">Agentic AI | RAG | LLM eval | PyTorch</text>
 
   </g>
 </svg>
