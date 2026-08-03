@@ -46,19 +46,19 @@
     <rect x="0" y="0" width="336" height="178" rx="18" class="chip"/>
     <text x="20" y="30" class="mono label">LIVE GITHUB STATS</text>
     <text x="20" y="58" class="mono body">
-      <tspan class="key">Repos:</tspan> <tspan id="repo_data" class="value">28</tspan><tspan>    </tspan><tspan class="key">Stars:</tspan> <tspan id="star_data" class="value">4</tspan>
+      <tspan class="key">Repos:</tspan> <tspan id="repo_data" class="value">28</tspan>
     </text>
     <text x="20" y="84" class="mono body">
-      <tspan class="key">Commits:</tspan> <tspan id="commit_data" class="value">0</tspan>
+      <tspan class="key">Stars earned:</tspan> <tspan id="star_data" class="value">4</tspan>
     </text>
     <text x="20" y="110" class="mono body">
       <tspan class="key">Followers:</tspan> <tspan id="follower_data" class="value">2</tspan>
     </text>
     <text x="20" y="136" class="mono body">
-      <tspan class="key">Contrib:</tspan> <tspan id="contrib_data" class="value">49</tspan>
+      <tspan class="key">Contributions (1y):</tspan> <tspan id="contrib_data" class="value">71</tspan>
     </text>
     <text x="20" y="162" class="mono body">
-      <tspan class="key">LOC:</tspan> <tspan id="loc_data" class="value">0</tspan><tspan> (+</tspan><tspan id="loc_add" class="value">0</tspan><tspan>, -</tspan><tspan id="loc_del" class="value">0</tspan><tspan>)</tspan>
+      <tspan class="key">Member since:</tspan> <tspan id="since_data" class="value">2023</tspan>
     </text>
 
     <!-- EDUCATION -->
