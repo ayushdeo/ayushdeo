@@ -52,7 +52,7 @@
       <tspan class="key">Commits:</tspan> <tspan id="commit_data" class="value">0</tspan>
     </text>
     <text x="20" y="110" class="mono body">
-      <tspan class="key">Followers:</tspan> <tspan id="follower_data" class="value">1</tspan>
+      <tspan class="key">Followers:</tspan> <tspan id="follower_data" class="value">2</tspan>
     </text>
     <text x="20" y="136" class="mono body">
       <tspan class="key">Contrib:</tspan> <tspan id="contrib_data" class="value">49</tspan>
