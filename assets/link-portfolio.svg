@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="240" height="52" viewBox="0 0 240 52" role="img" aria-label="Portfolio"><title>Portfolio</title><style>
+.mono{font-family:ui-monospace,SFMono-Regular,'JetBrains Mono',Menlo,Consolas,'Liberation Mono',monospace} .sans{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif}
+.coord{font-family:ui-monospace,SFMono-Regular,'JetBrains Mono',Menlo,Consolas,'Liberation Mono',monospace;font-size:10px;fill:#5d6b7c}
+.ticker{font-family:ui-monospace,SFMono-Regular,'JetBrains Mono',Menlo,Consolas,'Liberation Mono',monospace;font-size:15px;font-weight:700;fill:#7ee7b0}
+.ticker.dim{fill:#5d6b7c;font-weight:400}
+.ticker.mate{fill:#ff7b72;letter-spacing:2px}
+</style><defs>
+<linearGradient id="rim" x1="0" y1="0" x2="1" y2="1">
+  <stop offset="0" stop-color="#7ee7b0" stop-opacity=".55"/>
+  <stop offset=".5" stop-color="#243041"/>
+  <stop offset="1" stop-color="#b39dff" stop-opacity=".55"/>
+</linearGradient>
+<radialGradient id="checkGlow">
+  <stop offset="0" stop-color="#ff5b5b" stop-opacity=".85"/>
+  <stop offset="1" stop-color="#ff5b5b" stop-opacity="0"/>
+</radialGradient></defs><rect x=".5" y=".5" width="239" height="51" rx="14" fill="#131b24" stroke="url(#rim)"/><g transform="translate(20 17)" color="#7ee7b0"><path d="M9 1 17 9 9 17 1 9Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></g><text x="50" y="31" class="mono" font-size="14" fill="#e6edf3" font-weight="700" >Portfolio</text><text x="220" y="31" class="mono" font-size="15" fill="#5d6b7c" text-anchor="end" >↗</text></svg>

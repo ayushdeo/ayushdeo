@@ -1,2 +1,2 @@
-cache/*
-!cache/requirements.txt
+__pycache__/
+_preview.html
