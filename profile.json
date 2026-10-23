@@ -1,7 +1,7 @@
 {
   "login": "ayushdeo",
   "name": "Ayush Deo",
-  "tagline": ["M.S. Computer Science @ USC", "Applied research in language systems"],
+  "tagline": ["M.S. Computer Science @ USC", "NLP, LLM internals, and social judgment in language"],
   "location": "Los Angeles",
   "publications": 6,
   "chips": [
@@ -11,41 +11,42 @@
     { "name": "C++", "color": "#f34b7d" }
   ],
   "now": [
-    ["objective", "applied research in language systems", false],
-    ["in progress", "optimization in compression systems", true],
-    ["in progress", "spatial transcriptomics", true],
-    ["studying", "M.S. Computer Science @ USC · '27", false],
-    ["published", "6 peer-reviewed papers · NLP & CV", false]
+    ["research", "how language carries social judgment, and what LLMs do to it", false],
+    ["research assistant", "USC Dornsife \u00b7 body-worn video annotation platform", false],
+    ["in progress", "STARE \u00b7 feedback-driven measurement in spatial transcriptomics", true],
+    ["in progress", "neuron-level editing for security in code LLMs", true],
+    ["studying", "M.S. Computer Science @ USC \u00b7 '27", false]
   ],
   "links": [
     { "label": "Portfolio", "icon": "portfolio", "url": "https://ayushdeo.github.io/Persona_Portfolio/" },
-    { "label": "Scholar", "icon": "scholar", "url": "https://scholar.google.com/citations?user=PTnp3CgAAAAJ&hl=en" },
+    { "label": "Scholar", "icon": "scholar", "url": "https://scholar.google.com/citations?user=mU8Ec5AAAAAJ&hl=en" },
     { "label": "LinkedIn", "icon": "linkedin", "url": "https://www.linkedin.com/in/ayushdeo" },
     { "label": "Email", "icon": "email", "url": "mailto:theayushdeo@gmail.com" }
   ],
   "repos": {
-    "Connecttr": {
-      "description": "Full-stack multi-tenant SaaS that automates B2B outbound: lead discovery, enrichment, intent scoring and personalized email.",
-      "tags": ["full-stack", "llm", "fastapi"]
-    },
     "Internalizing-Security-Constraints-in-LLMs-via-Neuron-Level-Editing": {
-      "title": "LLM Security · Neuron Editing",
-      "description": "500-prompt security benchmark for code LLMs, red-team stress tests, and neuron-level localization of insecure generations.",
-      "tags": ["ai-safety", "code-llms"]
+      "title": "LLM Security \u00b7 Neuron Editing",
+      "description": "Do code LLMs know when they write insecure code? A 500-prompt benchmark, red-team stress tests, and neuron-level localization of unsafe generations \u2014 steering behaviour without fine-tuning.",
+      "tags": ["interpretability", "ai-safety", "code-llms"]
+    },
+    "STARE": {
+      "title": "STARE \u00b7 Where to Measure Next?",
+      "description": "Does choosing each next tissue region from what you have already measured beat a fixed design? Acquisition simulator over 22 HEST-1k slides, feedback ablations, and three registered analysis plans.",
+      "tags": ["spatial-omics", "preprint", "preregistered"]
+    },
+    "Unveiling-Biases-via-Proactive-Detection-and-Analysis-of-Racism-in-GPT-4o-mini": {
+      "title": "Unveiling Biases in GPT-4o-mini",
+      "description": "Evaluation pipelines probing racial bias in GPT-4o-mini across domains, using structured prompts and NLP metrics. Published 2025.",
+      "tags": ["llm-bias", "evaluation"]
     },
     "ICU-MM": {
-      "description": "Multimodal ICU research on MIMIC-IV and MIMIC-CXR.",
+      "description": "Multimodal ICU research on MIMIC-IV and MIMIC-CXR: preprocessing pipelines, structured datasets and model code.",
       "tags": ["multimodal", "healthcare"]
     },
     "not-all-genes-are-equal": {
       "title": "Not All Genes Are Equal",
-      "description": "Reproduces BLEEP: predicting spatial gene expression from H&E histology via contrastive image-expression alignment.",
+      "description": "Reproduces BLEEP: predicting spatial gene expression from H&E histology via contrastive image-expression alignment, benchmarked against learned baselines.",
       "tags": ["spatial-omics", "contrastive"]
-    },
-    "Unveiling-Biases-via-Proactive-Detection-and-Analysis-of-Racism-in-GPT-4o-mini": {
-      "title": "Unveiling Biases in GPT-4o-mini",
-      "description": "Evaluation pipelines probing racial bias in GPT-4o-mini across domains, using structured prompts and NLP metrics. Springer, 2025.",
-      "tags": ["llm-bias", "springer"]
     },
     "Improved-Round-Robin-approach-on-Computational-Grids-using-Agent-Based-Priority-Heuristic": {
       "title": "Improved Round Robin on Grids",
