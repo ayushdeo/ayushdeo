@@ -174,9 +174,58 @@ def language_stack(repos: list[dict]) -> tuple[list[tuple[str, float, str]], int
 
 
 # ------------------------------------------------------------- panels
+def text_width(s: str, size: float) -> float:
+    """Rough rendered width of sans-serif text; errs slightly wide on purpose."""
+    w = 0.0
+    for ch in s:
+        if ch in "il.,:;'|!·()[] ":
+            w += 0.3
+        elif ch in "mwMW@":
+            w += 0.86
+        elif ch.isupper():
+            w += 0.66
+        elif ch.isdigit():
+            w += 0.57
+        else:
+            w += 0.53
+    return w * size
+
+
+def wrap_px(text: str, size: float, max_w: float) -> list[str]:
+    """Greedy word wrap against an estimated pixel width."""
+    lines, cur = [], ""
+    for word in text.split():
+        trial = f"{cur} {word}".strip()
+        if cur and text_width(trial, size) > max_w:
+            lines.append(cur)
+            cur = word
+        else:
+            cur = trial
+    if cur:
+        lines.append(cur)
+    return lines
+
+
+# NOW.md panel geometry (the panel grows to fit its content)
+NOW_TOP, NOW_X, NOW_RIGHT = 310, 526, 960
+NOW_SIZE, NOW_LINE, NOW_GAP = 14, 19, 13
+
+
+def now_layout() -> tuple[list[tuple[str, list[str], bool]], float]:
+    items = [(k, wrap_px(v, NOW_SIZE, NOW_RIGHT - NOW_X), live) for k, v, live in CONFIG["now"]]
+    y = NOW_TOP + 62  # first label baseline
+    for _, lines, _ in items:
+        y += 20 + NOW_LINE * (len(lines) - 1) + NOW_GAP + 14
+    bottom = y + 22  # room for the prompt line
+    return items, bottom
+
+
 def dashboard(user: dict, stack, stars: int, repo_count: int, now: dt.datetime) -> str:
-    W, H = 1000, 600
-    defs, board, loop_s, caption = build_chess_svg(x=58, y=100, square=48, palette=P)
+    items, now_bottom = now_layout()
+    W, H = 1000, max(600, round(now_bottom + 20))
+    chess_h = H - 84
+    board_y = 100 + (chess_h - 516) // 2  # keep the board centred if the window grew
+    defs, board, loop_s, caption = build_chess_svg(x=58, y=board_y, square=48, palette=P)
     avatar = avatar_data_uri(user["avatarUrl"])
     b = []
 
@@ -193,11 +242,11 @@ def dashboard(user: dict, stack, stars: int, repo_count: int, now: dt.datetime) 
     b.append(f'<line x1="0" y1="46" x2="{W}" y2="46" stroke="{P["border"]}"/>')
 
     # chess panel
-    b.append(f'<rect x="20" y="64" width="452" height="516" rx="14" fill="{P["panel2"]}" stroke="{P["border"]}"/>')
+    b.append(f'<rect x="20" y="64" width="452" height="{chess_h}" rx="14" fill="{P["panel2"]}" stroke="{P["border"]}"/>')
     b.append(t(40, 88, "CHESS.REPLAY", size=11, fill=P["mint"], weight=700, extra='letter-spacing="1.5"'))
     b.append(t(452, 88, "opera_game.pgn", size=11, fill=P["dim"], anchor="end"))
     b.append(board)
-    b.append(t(40, 560, caption, size=11, fill=P["dim"]))
+    b.append(t(40, H - 40, caption, size=11, fill=P["dim"]))
 
     # profile card
     b.append(f'<rect x="488" y="64" width="492" height="230" rx="14" fill="{P["panel2"]}" stroke="{P["border"]}"/>')
@@ -209,7 +258,10 @@ def dashboard(user: dict, stack, stars: int, repo_count: int, now: dt.datetime) 
     b.append(t(616, 106, f"@{LOGIN}", size=13, fill=P["mint"]))
     b.append(t(614, 146, CONFIG["name"], cls="sans", size=34, weight=700))
     for i, line in enumerate(CONFIG["tagline"]):
-        b.append(t(616, 172 + i * 20, line, cls="sans", size=14, fill=P["muted"]))
+        size = 14.0
+        while size > 11.5 and text_width(line, size) > 960 - 616:
+            size -= 0.5
+        b.append(t(616, 172 + i * 20, line, cls="sans", size=size, fill=P["muted"]))
     b.append(t(956, 118, stars, cls="sans", size=40, weight=700, fill=P["mint"], anchor="end"))
     b.append(t(956, 138, "TOTAL STARS", size=10, fill=P["muted"], anchor="end", extra='letter-spacing="1.2"'))
     b.append(f'<line x1="508" y1="216" x2="960" y2="216" stroke="{P["border"]}"/>')
@@ -228,22 +280,26 @@ def dashboard(user: dict, stack, stars: int, repo_count: int, now: dt.datetime) 
     )
 
     # now panel
-    b.append(f'<rect x="488" y="310" width="492" height="270" rx="14" fill="{P["panel2"]}" stroke="{P["border"]}"/>')
-    b.append(t(508, 336, "NOW.MD", size=11, fill=P["mint"], weight=700, extra='letter-spacing="1.5"'))
-    b.append(t(960, 336, "$ cat now.md", size=11, fill=P["dim"], anchor="end"))
-    y = 374
-    for key, value, live in CONFIG["now"]:
-        b.append(t(508, y, "▸", size=13, fill=P["mint"]))
-        b.append(t(526, y, key.upper(), size=10.5, fill=P["muted"], extra='letter-spacing="1"'))
+    now_h = H - 20 - NOW_TOP
+    b.append(f'<rect x="488" y="{NOW_TOP}" width="492" height="{now_h}" rx="14" fill="{P["panel2"]}" stroke="{P["border"]}"/>')
+    b.append(t(508, NOW_TOP + 26, "NOW.MD", size=11, fill=P["mint"], weight=700, extra='letter-spacing="1.5"'))
+    b.append(t(NOW_RIGHT, NOW_TOP + 26, "$ cat now.md", size=11, fill=P["dim"], anchor="end"))
+    y = NOW_TOP + 62
+    for key, lines, live in items:
+        # label on its own line, value wraps underneath at full panel width
+        b.append(t(508, y, "▸", size=12, fill=P["mint"]))
+        b.append(t(NOW_X, y, key.upper(), size=10, fill=P["muted"], extra='letter-spacing="1.2"'))
         if live:
+            dot_x = NOW_X + len(key) * 7.2 + 10
             b.append(
-                f'<circle cx="618" cy="{y - 4}" r="3.5" fill="{P["mint"]}">'
+                f'<circle cx="{dot_x:.0f}" cy="{y - 3.5}" r="3.2" fill="{P["mint"]}">'
                 f'<animate attributeName="opacity" values="1;.2;1" dur="1.6s" repeatCount="indefinite"/></circle>'
             )
-        b.append(t(632, y, value, cls="sans", size=14.5, fill=P["text"]))
-        y += 34
-    b.append(t(508, y + 6, "$", size=13, fill=P["mint"]))
-    b.append(f'<rect x="522" y="{y - 6}" width="9" height="15" fill="{P["mint"]}">{blink()}</rect>')
+        for j, line in enumerate(lines):
+            b.append(t(NOW_X, y + 20 + j * NOW_LINE, line, cls="sans", size=NOW_SIZE, fill=P["text"]))
+        y += 20 + NOW_LINE * (len(lines) - 1) + NOW_GAP + 14
+    b.append(t(508, y + 2, "$", size=13, fill=P["mint"]))
+    b.append(f'<rect x="522" y="{y - 10}" width="9" height="15" fill="{P["mint"]}">{blink()}</rect>')
 
     return svg_doc(W, H, "".join(b), defs, f"{CONFIG['name']}: profile dashboard with an animated chess replay")
 
