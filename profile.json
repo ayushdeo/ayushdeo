@@ -4,6 +4,8 @@
   "tagline": ["M.S. Computer Science @ USC", "NLP, LLM internals, and social judgment in language"],
   "location": "Los Angeles",
   "publications": 6,
+  "hero": "brain",
+  "research_focus": "How LLM-generated language shapes human social, behavioral and moral judgment, and what language models learn about us in turn.",
   "chips": [
     { "name": "Python", "color": "#3572A5" },
     { "name": "TypeScript", "color": "#3178c6" },

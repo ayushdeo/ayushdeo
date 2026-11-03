@@ -15,7 +15,8 @@ from collections import Counter
 from html import escape
 from pathlib import Path
 
-from chess_replay import build_chess_svg
+from brain import FOUNDATIONS, build_brain_svg
+from chess_replay import OPERA_GAME, build_chess_svg
 
 ROOT = Path(__file__).resolve().parent.parent
 ASSETS = ROOT / "assets"
@@ -220,12 +221,43 @@ def now_layout() -> tuple[list[tuple[str, list[str], bool]], float]:
     return items, bottom
 
 
+HERO = CONFIG.get("hero", "brain")
+ALT = "chess" if HERO == "brain" else "brain"
+VISUAL_TEXT = {
+    "brain": ("LANGUAGE × MIND", "social_judgment.nlp", "how LLM-generated language shapes human social & moral judgment"),
+    "chess": ("CHESS.REPLAY", "opera_game.pgn", None),
+}
+
+
+def visual(kind: str, px: float, py: float, pw: float, ph: float):
+    """Draw the chess replay or the brain inside a panel box; returns (defs, body, caption)."""
+    if kind == "chess":
+        board_y = py + 36 + (ph - 516) // 2
+        defs, body, _, caption = build_chess_svg(x=px + 38, y=board_y, square=48, palette=P)
+        return defs, body, caption
+    defs, body = build_brain_svg(x=px + 14, y=py + 34, w=pw - 28, h=ph - 56, palette=P)
+    return defs, body, VISUAL_TEXT["brain"][2]
+
+
+def visual_panel(kind: str, px: float, py: float, pw: float, ph: float):
+    defs, body, caption = visual(kind, px, py, pw, ph)
+    head, file, _ = VISUAL_TEXT[kind]
+    b = [
+        f'<rect x="{px}" y="{py}" width="{pw}" height="{ph}" rx="14" fill="{P["panel2"]}" stroke="{P["border"]}"/>',
+        t(px + 20, py + 24, head, size=11, fill=P["mint"], weight=700, extra='letter-spacing="1.5"'),
+        t(px + pw - 20, py + 24, file, size=11, fill=P["dim"], anchor="end"),
+        body,
+    ]
+    if kind == "chess":
+        b.append(t(px + 20, py + ph - 20, caption, size=11, fill=P["dim"]))
+    return defs, "".join(b)
+
+
 def dashboard(user: dict, stack, stars: int, repo_count: int, now: dt.datetime) -> str:
     items, now_bottom = now_layout()
     W, H = 1000, max(600, round(now_bottom + 20))
     chess_h = H - 84
-    board_y = 100 + (chess_h - 516) // 2  # keep the board centred if the window grew
-    defs, board, loop_s, caption = build_chess_svg(x=58, y=board_y, square=48, palette=P)
+    defs, hero_panel = visual_panel(HERO, 20, 64, 452, chess_h)
     avatar = avatar_data_uri(user["avatarUrl"])
     b = []
 
@@ -242,11 +274,7 @@ def dashboard(user: dict, stack, stars: int, repo_count: int, now: dt.datetime) 
     b.append(f'<line x1="0" y1="46" x2="{W}" y2="46" stroke="{P["border"]}"/>')
 
     # chess panel
-    b.append(f'<rect x="20" y="64" width="452" height="{chess_h}" rx="14" fill="{P["panel2"]}" stroke="{P["border"]}"/>')
-    b.append(t(40, 88, "CHESS.REPLAY", size=11, fill=P["mint"], weight=700, extra='letter-spacing="1.5"'))
-    b.append(t(452, 88, "opera_game.pgn", size=11, fill=P["dim"], anchor="end"))
-    b.append(board)
-    b.append(t(40, H - 40, caption, size=11, fill=P["dim"]))
+    b.append(hero_panel)
 
     # profile card
     b.append(f'<rect x="488" y="64" width="492" height="230" rx="14" fill="{P["panel2"]}" stroke="{P["border"]}"/>')
@@ -301,7 +329,7 @@ def dashboard(user: dict, stack, stars: int, repo_count: int, now: dt.datetime) 
     b.append(t(508, y + 2, "$", size=13, fill=P["mint"]))
     b.append(f'<rect x="522" y="{y - 10}" width="9" height="15" fill="{P["mint"]}">{blink()}</rect>')
 
-    return svg_doc(W, H, "".join(b), defs, f"{CONFIG['name']}: profile dashboard with an animated chess replay")
+    return svg_doc(W, H, "".join(b), defs, f"{CONFIG['name']}: profile dashboard with an animated {'language and mind visual' if HERO == 'brain' else 'chess replay'}")
 
 
 ICONS = {
@@ -410,14 +438,86 @@ def stack_panel(stack, counted: int) -> str:
     return svg_doc(W, H, "".join(b), title="Language stack")
 
 
+def alt_panel(now: dt.datetime) -> str:
+    """The visual that isn't in the dashboard, shown behind the README toggle."""
+    W, H = 1000, 600
+    defs, vis = visual_panel(ALT, 20, 64, 452, H - 84)
+    b = [f'<rect x=".5" y=".5" width="{W-1}" height="{H-1}" rx="20" fill="{P["panel"]}" stroke="url(#rim)"/>']
+    for i, c in enumerate(("#ff5f57", "#febc2e", "#28c840")):
+        b.append(f'<circle cx="{26 + i * 20}" cy="24" r="6" fill="{c}"/>')
+    b.append(t(94, 28, f"{LOGIN} / {VISUAL_TEXT[ALT][1]}", size=13, fill=P["muted"]))
+    b.append(f'<line x1="0" y1="46" x2="{W}" y2="46" stroke="{P["border"]}"/>')
+    b.append(vis)
+    x = 512
+    if ALT == "chess":
+        import io as _io
+
+        import chess.pgn as _pgn
+
+        game = _pgn.read_game(_io.StringIO(OPERA_GAME))
+        board = game.board()
+        sans = []
+        for mv in game.mainline_moves():
+            sans.append(board.san(mv))
+            board.push(mv)
+        pairs = [
+            f"{n + 1:>2}. {sans[2 * n]:<6} {sans[2 * n + 1] if 2 * n + 1 < len(sans) else ''}".rstrip()
+            for n in range((len(sans) + 1) // 2)
+        ]
+        b.append(t(x, 112, "The Opera Game", cls="sans", size=30, weight=700))
+        b.append(t(x, 140, "Paul Morphy vs Duke Karl of Brunswick & Count Isouard", cls="sans", size=14, fill=P["muted"]))
+        b.append(t(x, 162, "Paris · 1858 · played in a box at the opera", cls="sans", size=14, fill=P["muted"]))
+        b.append(f'<line x1="{x}" y1="186" x2="960" y2="186" stroke="{P["border"]}"/>')
+        half = (len(pairs) + 1) // 2
+        for k, line in enumerate(pairs):
+            col, row = divmod(k, half)
+            last = k == len(pairs) - 1
+            b.append(
+                t(x + col * 228, 220 + row * 26, line, size=14, fill=P["mint"] if last else P["text"], weight=700 if last else None,
+                  extra='xml:space="preserve"')
+            )
+        y = 226 + half * 26
+        b.append(f'<line x1="{x}" y1="{y}" x2="960" y2="{y}" stroke="{P["border"]}"/>')
+        b.append(t(x, y + 30, "16. Qb8+!! gives up the queen; 17. Rd8# mates", cls="sans", size=14, fill=P["muted"]))
+        b.append(t(x, y + 52, "with just a rook and a bishop.", cls="sans", size=14, fill=P["muted"]))
+    else:
+        b.append(t(x, 112, "Language × Mind", cls="sans", size=30, weight=700))
+        for k, line in enumerate(wrap_px(CONFIG.get("research_focus", ""), 15, 960 - x)):
+            b.append(t(x, 146 + k * 22, line, cls="sans", size=15, fill=P["muted"]))
+        y = 260
+        b.append(t(x, y, "MORAL FOUNDATIONS", size=10.5, fill=P["dim"], extra='letter-spacing="1.4"'))
+        for k, (label, col) in enumerate(FOUNDATIONS):
+            r, c = divmod(k, 2)
+            b.append(f'<circle cx="{x + 6 + c * 200}" cy="{y + 30 + r * 30 - 4}" r="5" fill="{col}"/>')
+            b.append(t(x + 20 + c * 200, y + 30 + r * 30, label, size=13.5, fill=P["text"]))
+    return svg_doc(W, H, "".join(b), defs, f"{VISUAL_TEXT[ALT][0]} panel")
+
+
 # -------------------------------------------------------------- README
+HERO_ALT = (
+    "An animated 3-D brain absorbs socially and morally loaded words streaming from an LLM."
+    if HERO == "brain"
+    else "An animated board replays Morphy's Opera Game."
+)
+TOGGLE_LABEL = "♟&nbsp; Toggle: chess replay" if ALT == "chess" else "🧠&nbsp; Toggle: language × mind"
+ALT_ALT = "Animated replay of Paul Morphy's 1858 Opera Game" if ALT == "chess" else "Animated 3-D language and mind visual"
+
+
 def readme(pinned: list[dict]) -> str:
     links = CONFIG["links"]
     out = [
         "<!-- Generated by scripts/build.py — edit profile.json instead. -->",
         '<p align="center">',
-        f'  <img src="assets/dashboard.svg" width="100%" alt="{escape(CONFIG["name"])}: {escape(" · ".join(CONFIG["tagline"]))}. An animated board replays Morphy\'s Opera Game." />',
+        f'  <img src="assets/dashboard.svg" width="100%" alt="{escape(CONFIG["name"])}: {escape(" · ".join(CONFIG["tagline"]))}. {HERO_ALT}" />',
         "</p>",
+        "",
+        "<details>",
+        f"<summary><b>{TOGGLE_LABEL}</b></summary>",
+        "<br/>",
+        '<p align="center">',
+        f'  <img src="assets/alt-panel.svg" width="100%" alt="{ALT_ALT}" />',
+        "</p>",
+        "</details>",
         "",
         '<p align="center">',
     ]
@@ -436,7 +536,7 @@ def readme(pinned: list[dict]) -> str:
         '  <img src="assets/stack.svg" width="100%" alt="Language stack" />',
         "</p>",
         "",
-        '<p align="center"><sub>Board replays Paul Morphy\'s 1858 Opera Game · pieces by Cburnett via python-chess · panels rebuilt daily by GitHub Actions</sub></p>',
+        '<p align="center"><sub>Brain: 3-D point cloud rendered to SVG, orbited by the six Moral Foundations · chess replays Paul Morphy\'s 1858 Opera Game · pieces by Cburnett via python-chess · panels rebuilt daily by GitHub Actions</sub></p>',
         "",
     ]
     return "\n".join(out)
@@ -461,6 +561,7 @@ def main() -> None:
     for i, repo in enumerate(pinned):
         write(f"project-{i + 1}.svg", project_card(repo, CONFIG["repos"].get(repo["name"], {}), now, i))
     write("stack.svg", stack_panel(stack, counted))
+    write("alt-panel.svg", alt_panel(now))
     (ROOT / "README.md").write_text(readme(pinned), encoding="utf-8", newline="\n")
     print(f"built: {len(pinned)} pinned · {stars} stars · top langs {[s[0] for s in stack[:4]]}")
 
