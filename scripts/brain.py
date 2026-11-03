@@ -181,17 +181,26 @@ def build_brain_svg(*, x: float, y: float, w: float, h: float, palette: dict) ->
     orbit_s = ROTATE_S * 1.6
     for k, (label, col) in enumerate(FOUNDATIONS):
         phase = 2 * math.pi * k / len(FOUNDATIONS)
-        tx, ty, op = [], [], []
+        tx, ty, op, right = [], [], [], []
         for a in yaws:
             ang = -a + phase
             px, py, pz = _project((1.2 * math.cos(ang), 0.05, 1.2 * math.sin(ang)), 0, cx, cy, scale)
             tx.append(f"{px:.0f} {py:.0f}")
             op.append(f"{0.25 + 0.75 * near(pz):.2f}")
+            right.append(px > cx)
+        # Labels always face inward so they never leave the panel: on the right
+        # half of the orbit the label sits left of its dot, and vice versa.
+        keys = ";".join(f"{i / FRAMES:.4f}" for i in range(FRAMES + 1))
+        show_r = vals("0" if r else "1" for r in right)
+        show_l = vals("1" if r else "0" for r in right)
+        font = 'font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="10.5"'
+        anim = f'calcMode="discrete" keyTimes="{keys}" dur="{orbit_s:.1f}s" repeatCount="indefinite"'
         out.append(
             f'<g><animateTransform attributeName="transform" type="translate" values="{vals(tx)}" dur="{orbit_s:.1f}s" repeatCount="indefinite"/>'
             f'<animate attributeName="opacity" values="{vals(op)}" dur="{orbit_s:.1f}s" repeatCount="indefinite"/>'
             f'<circle r="3.6" fill="{col}"/><circle r="8" fill="{col}" opacity=".18"/>'
-            f'<text x="9" y="4" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="10.5" fill="{col}">{label}</text></g>'
+            f'<text x="9" y="4" {font} fill="{col}">{label}<animate attributeName="opacity" values="{show_r}" {anim}/></text>'
+            f'<text x="-9" y="4" {font} fill="{col}" text-anchor="end">{label}<animate attributeName="opacity" values="{show_l}" {anim}/></text></g>'
         )
     out.append("</g>")  # end float
 
