@@ -1,9 +1,9 @@
 {
   "login": "ayushdeo",
   "name": "Ayush Deo",
-  "tagline": ["M.S. Computer Science @ USC", "NLP, LLM internals, and social judgment in language"],
+  "tagline": ["Software developer \u00b7 M.S. Computer Science @ USC", "NLP, LLM internals, and social judgment in language"],
   "location": "Los Angeles",
-  "publications": 6,
+  "publications": 5,
   "hero": "brain",
   "research_focus": "How LLM-generated language shapes human social, behavioral and moral judgment, and what language models learn about us in turn.",
   "chips": [
@@ -14,9 +14,11 @@
   ],
   "now": [
     ["research", "how language carries social judgment, and what LLMs do to it", false],
-    ["research assistant", "USC Dornsife \u00b7 body-worn video annotation platform", false],
-    ["in progress", "STARE \u00b7 feedback-driven measurement in spatial transcriptomics", true],
-    ["in progress", "neuron-level editing for security in code LLMs", true],
+    ["software developer \u00b7 research assistant", "USC Dornsife \u00b7 17-service platform for 150 researchers", false],
+    ["in progress", "dark patterns in LLM shopping \u00b7 IRB-approved user study (PI)", true],
+    ["in progress", "RECAP \u00b7 C++/MPI rare-event recorder for molecular dynamics", true],
+    ["in progress", "STARE \u00b7 feedback-driven region selection in spatial omics", true],
+    ["in progress", "GEARS XR \u00b7 LLM-assisted review of molecular-dynamics events", true],
     ["studying", "M.S. Computer Science @ USC \u00b7 '27", false]
   ],
   "links": [
@@ -26,6 +28,16 @@
     { "label": "Email", "icon": "email", "url": "mailto:theayushdeo@gmail.com" }
   ],
   "repos": {
+    "Connecttr": {
+      "title": "Connecttr \u00b7 Sales-Automation SaaS",
+      "description": "Multi-tenant B2B SaaS on React 19, FastAPI and MongoDB Atlas: SSE-streamed lead discovery and org-scoped RBAC with audit logs.",
+      "tags": ["full-stack", "saas", "fastapi"]
+    },
+    "everyday-respect": {
+      "title": "CVAT \u00b7 Synchronized Audio",
+      "description": "A CVAT fork with in-browser audio playback kept in sync with video (PyAV demuxing, drift correction) and one-command Azure deployment.",
+      "tags": ["video-annotation", "pyav", "azure"]
+    },
     "Internalizing-Security-Constraints-in-LLMs-via-Neuron-Level-Editing": {
       "title": "LLM Security \u00b7 Neuron Editing",
       "description": "Do code LLMs know when they write insecure code? A 500-prompt benchmark, red-team stress tests, and neuron-level localization of unsafe generations \u2014 steering behaviour without fine-tuning.",
@@ -38,7 +50,7 @@
     },
     "Unveiling-Biases-via-Proactive-Detection-and-Analysis-of-Racism-in-GPT-4o-mini": {
       "title": "Unveiling Biases in GPT-4o-mini",
-      "description": "Evaluation pipelines probing racial bias in GPT-4o-mini across domains, using structured prompts and NLP metrics. Published 2025.",
+      "description": "Evaluation pipelines probing racial bias in GPT-4o-mini across domains, using structured prompts and NLP metrics. Published 2026 (Springer).",
       "tags": ["llm-bias", "evaluation"]
     },
     "ICU-MM": {
